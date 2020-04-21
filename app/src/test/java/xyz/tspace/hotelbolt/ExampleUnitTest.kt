@@ -13,13 +13,13 @@ import xyz.tspace.hotelbolt.model.*
 import kotlin.random.Random
 
 val token = Token(
-    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOlsicmVzMSJdLCJ1c2VyX25hbWUiOiJ7XCJpZFwiOlwiNjJcIixcImxvZ2luY29kZVwiOlwiMTAxMTAxMVwiLFwicGFzc3dvcmRcIjpcIiQyYSQxMCROOXFmU0hvclRZLzE3Ly43Tnd2Nk91TEMyVlMwYTl1VjNmSTlmUHNPeUhLaWJEYWRwUGhES1wiLFwidXNlcm5hbWVcIjpcIui_measoeW6lOivpeS4jeS8mumUmeS6hlwifSIsInNjb3BlIjpbIlJPTEVfQURNSU4iLCJST0xFX1VTRVIiLCJST0xFX0FQSSJdLCJleHAiOjE1ODY5MzY4MjksImF1dGhvcml0aWVzIjpbIlVTRVIiLCJDR0lORk8iXSwianRpIjoiOWQyNThiM2EtNWVlZC00MzdlLTllNDAtYjIwMzQzMzRjYTk2IiwiY2xpZW50X2lkIjoiYzEifQ.ZoGsqQFXS4J8iRllnuDiWHMy5Sml06jjaOkVIuMEBTc"
-)
+    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOlsicmVzMSJdLCJleHAiOjE1ODc0NTcwMTgsInVzZXJfbmFtZSI6IntcImlkXCI6XCI2NFwiLFwibG9naW5jb2RlXCI6XCIyMDE3MDIzXCIsXCJwYXNzd29yZFwiOlwiJDJhJDEwJDNhblJaT0thLlhCbmJmbGV5MjUvV09aLmE4VEM3Ukp5dnRnOHFKblJ4L2tBdS9odS5JS2htXCIsXCJ1c2VybmFtZVwiOlwiMjAxNzAyM1wifSIsImp0aSI6ImE0NTI5MDUyLWI4MzctNGI4Mi05NDhhLTZlN2RmYzhmN2ZlZCIsImNsaWVudF9pZCI6ImMxIiwic2NvcGUiOlsiUk9MRV9BRE1JTiIsIlJPTEVfVVNFUiIsIlJPTEVfQVBJIl19.wdXWwRo0RAQbubyl0WN0zYsQrqXCF17xo6XVVJ6B2ws"
+   )
 
 fun main() {
 
+    testFindComments()
 
-    testModifiedUser()
 
 
 }
@@ -120,4 +120,21 @@ fun testModifiedUser() {
             println(response.body()?.message)
         }
     })
+}
+
+fun testFindComments() {
+    HotelService.findAllComments(token, "1", callback = object : ResponseList<Appraise> {
+        override fun onFailure(call: Call<BaseBean<List<Appraise>>>, t: Throwable) {
+            println(t.message)
+        }
+
+        override fun onResponse(
+            call: Call<BaseBean<List<Appraise>>>,
+            response: Response<BaseBean<List<Appraise>>>
+        ) {
+            println(response.body()?.data)
+        }
+
+    })
+
 }

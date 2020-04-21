@@ -312,6 +312,14 @@
     <string name="text_save">Save</string>
     <string name="text_hintForOffendingUsername">There can be no offending words in the username</string>
     <string name="kt_yearWithMonth">$year $month</string>
+    <string name="text_introduce">Introduce</string>
+    <string name="text_comment">Comment</string>
 
+    <string name="text_theLatest">The Latest</string>
+    <string name="text_theHotest">The Hottest</string>
+    <string name="text_theBest">the Best</string>
+    <string name="hint_clickToAppraise">Click to Appraise the service</string>
+    <string name="text_soso">So so</string>
 
+    <string name="hint_addComments">Try to add your comment here</string>
 </resources>

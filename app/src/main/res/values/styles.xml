@@ -88,6 +88,21 @@
         <item name="windowNoTitle">true</item>
     </style>
 
+    <style name="AppTheme.Label">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:textSize">@dimen/textsize_content</item>
+        <item name="android:textColor">#444444</item>
+    </style>
+
+    <style name="AppTheme.Label.Title">
+        <item name="android:textColor">#444444</item>
+        <item name="android:textSize">@dimen/textsize_title</item>
+    </style>
+
+
     <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
 
     <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
@@ -97,7 +112,14 @@
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_marginTop">16dp</item>
         <item name="android:textSize">16sp</item>
+        <item name="fontFamily">@font/baohei</item>
         <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="tab_title_style">
+        <item name="android:textSize">16sp</item>
+        <item name="fontFamily">@font/yashihei</item>
+        <item name="android:textStyle">normal</item>
     </style>
 
     <style name="second_shortcut_hotelInfo">
@@ -133,5 +155,13 @@
         <item name="actionMenuTextColor">@color/colorPrimary</item>
         <item name="fontFamily">@font/baohei</item>
 
+    </style>
+
+    <style name="style_appraise_subtitle">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">16dp</item>
+        <item name="android:fontFamily">@font/thinkb</item>
+        <item name="android:textSize">18sp</item>
     </style>
 </resources>

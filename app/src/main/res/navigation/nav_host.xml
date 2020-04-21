@@ -119,5 +119,18 @@
             android:name="hotelId"
             app:argType="string"
             android:defaultValue="1" />
+        <action
+            android:id="@+id/action_hotelDetailFragment_to_addingCommentFragment"
+            app:destination="@id/addingCommentFragment" />
+    </fragment>
+    <fragment
+        tools:layout="@layout/fragment_adding_comment"
+        android:id="@+id/addingCommentFragment"
+        android:name="xyz.tspace.hotelbolt.view.hotels.AddingCommentFragment"
+        android:label="AddingCommentFragment" >
+        <argument
+            android:name="userAppraise"
+            app:argType="float"
+            android:defaultValue="4.0" />
     </fragment>
 </navigation>

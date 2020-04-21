@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.qmuiteam.qmui.layout.QMUIConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tool="http://schemas.android.com/tools"
+    android:id="@+id/qmuiConstraintLayout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:minHeight="250dp"
+    android:paddingVertical="5dp">
+
+    <com.qmuiteam.qmui.widget.QMUIRadiusImageView2
+        android:id="@+id/userAvatar"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:background="@color/line_color"
+        android:scaleType="centerCrop"
+        android:src="@drawable/ic_person_outline_black_24dp"
+        android:translationZ="1dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.08"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.084"
+        app:qmui_corner_radius="30dp" />
+
+    <TextView
+        android:id="@+id/username"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:fontFamily="@font/baohei"
+        android:text="@string/text_username"
+        android:textColor="@color/app_color_theme_7"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/userAvatar"
+        app:layout_constraintTop_toTopOf="@+id/userAvatar" />
+
+    <View
+        android:id="@+id/divider22"
+        android:layout_width="1dp"
+        android:layout_height="0dp"
+        android:background="?android:attr/listDivider"
+        android:translationZ="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/userAvatar"
+        app:layout_constraintStart_toStartOf="@+id/userAvatar"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <xyz.tspace.foldtextview.FoldTextView
+        android:id="@+id/commentContent"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="10dp"
+        android:background="@color/entire_transparent"
+        android:fontFamily="@font/yashihei"
+        android:maxLines="4"
+        android:textSize="15sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/username"
+        app:layout_constraintTop_toBottomOf="@+id/username"
+        tool:text="@string/text_default_hotelIntro" />
+
+    <com.qmuiteam.qmui.widget.QMUIFloatLayout
+        android:id="@+id/photoFloat"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="6dp"
+        android:minHeight="60dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/commentContent"
+        app:layout_constraintTop_toBottomOf="@+id/commentContent"
+        app:layout_constraintVertical_bias="0.0">
+
+        <com.qmuiteam.qmui.widget.QMUIRadiusImageView2
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:src="@mipmap/pic1" />
+
+        <com.qmuiteam.qmui.widget.QMUIRadiusImageView2
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:src="@mipmap/pic2" />
+
+        <com.qmuiteam.qmui.widget.QMUIRadiusImageView2
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:src="@mipmap/pic3" />
+
+    </com.qmuiteam.qmui.widget.QMUIFloatLayout>
+
+    <TextView
+        android:id="@+id/commentDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:fontFamily="@font/baohei"
+        android:textColor="@color/qmui_config_color_gray_6"
+        android:textSize="13sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/photoFloat"
+        app:layout_constraintTop_toBottomOf="@+id/photoFloat"
+        app:layout_constraintVertical_bias="0.698"
+        tool:text="2019-10-10" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:divider="@drawable/divider_textview"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.924"
+        app:layout_constraintStart_toEndOf="@+id/commentDate"
+        app:layout_constraintTop_toTopOf="@+id/commentDate"
+        app:layout_constraintVertical_bias="0.0">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="10dp"
+            android:clickable="true"
+            android:drawableEnd="@drawable/ic_thumb_up_gray_24dp"
+            android:drawablePadding="7dp"
+            android:focusable="true"
+            android:fontFamily="@font/baohei"
+            android:gravity="center"
+            android:text="@string/default_zero_num"
+            android:textColor="@color/qmui_config_color_gray_6" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="10dp"
+            android:clickable="true"
+            android:drawableEnd="@drawable/ic_comment_gray_24dp"
+            android:drawablePadding="7dp"
+            android:focusable="true"
+            android:fontFamily="@font/baohei"
+            android:gravity="center"
+            android:text="@string/default_zero_num"
+            android:textColor="@color/qmui_config_color_gray_6" />
+
+    </LinearLayout>
+</com.qmuiteam.qmui.layout.QMUIConstraintLayout>

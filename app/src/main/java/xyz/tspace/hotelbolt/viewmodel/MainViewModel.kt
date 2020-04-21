@@ -70,8 +70,7 @@ class MainViewModel(application: Application) : BaseViewModel(application) {
 
 
     //轮播图数据
-    private val _homeBannerLiveLive: MutableLiveData<List<PixabayImage>> =
-        MutableLiveData(DataProvider.getPreviewImgList())
+    private val _homeBannerLiveLive = MutableLiveData(DataProvider.getPreviewImgList())
     val homeBannerLiveData: LiveData<List<PixabayImage>> get() = _homeBannerLiveLive
 
     //实时各酒店信息
@@ -82,6 +81,13 @@ class MainViewModel(application: Application) : BaseViewModel(application) {
     private val _hotelRoomLive =
         MutableLiveData<List<HotelRoom>>(DataProvider.getInitHotelRoomList())
     val hotelRoomLive: LiveData<List<HotelRoom>> get() = _hotelRoomLive
+
+    //房间评论信息
+    private val _roomCommentsLive = MutableLiveData<List<Appraise>>(listOf<Appraise>())
+    val roomCommentsLive: LiveData<List<Appraise>> get() = _roomCommentsLive
+
+    //
+    val userPraiseFlLive = MutableLiveData<Float>(0F)
 
 
     //抓取轮播图数据
@@ -143,8 +149,7 @@ class MainViewModel(application: Application) : BaseViewModel(application) {
                     call: Call<BaseBean<List<Hotel>>>,
                     response: Response<BaseBean<List<Hotel>>>
                 ) {
-                    val temp = response.body()?.data
-                    temp?.let { _hotelListLive.postValue(it) }
+                    response.body()?.data.let { _hotelListLive.postValue(it) }
                 }
 
             })
@@ -153,8 +158,8 @@ class MainViewModel(application: Application) : BaseViewModel(application) {
 
     fun fetchHotelRoomInfo(hotelId: String) {
         val token = _tokenLive.value
-        if (token != null && token.isValid) {
-            //TODO: 将hotelId参数修改为页面实际选择的酒店的hotelId
+        if (token != null && token.isValid)
+        //TODO: 将hotelId参数修改为页面实际选择的酒店的hotelId
             HotelService.searchRoomByHotelId(
                 token, "1", object : ResponseList<HotelRoom> {
                     override fun onFailure(call: Call<BaseBean<List<HotelRoom>>>, t: Throwable) {
@@ -165,13 +170,33 @@ class MainViewModel(application: Application) : BaseViewModel(application) {
                         call: Call<BaseBean<List<HotelRoom>>>,
                         response: Response<BaseBean<List<HotelRoom>>>
                     ) {
-                        response.body()?.data?.let {
-                            _hotelRoomLive.postValue(it)
-                        }
+                        response.body()?.data?.let { _hotelRoomLive.postValue(it) }
                     }
 
                 })
-        }
+
     }
+
+    fun fetchRoomComment(roomTypeId: String) {
+        val token = _tokenLive.value
+        if (token != null && token.isValid)
+        //todo: hotelId这个参数需要修正
+            HotelService.findAllComments(token, "1", object : ResponseList<Appraise> {
+                override fun onFailure(call: Call<BaseBean<List<Appraise>>>, t: Throwable) {
+                    println(t.cause.toString())
+                }
+
+                override fun onResponse(
+                    call: Call<BaseBean<List<Appraise>>>,
+                    response: Response<BaseBean<List<Appraise>>>
+                ) {
+                    response.body()?.data?.let { _roomCommentsLive.postValue(it) }
+
+                }
+            })
+
+
+    }
+
 
 }
