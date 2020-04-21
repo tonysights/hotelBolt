@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/textView24"
+        style="@style/second_title_hotelInfo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/sp_dining_options"
+        app:layout_constraintBottom_toTopOf="@+id/divider12"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.05"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/textView25"
+        style="@style/second_shortcut_hotelInfo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/hint_learnAll"
+        app:layout_constraintBottom_toBottomOf="@+id/textView24"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/textView24" />
+
+    <LinearLayout
+
+        android:id="@+id/linearLayout2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@+id/divider12"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView24">
+
+        <com.qmuiteam.qmui.widget.QMUIRadiusImageView
+            android:layout_width="150dp"
+            android:layout_height="120dp"
+            android:layout_marginHorizontal="8dp"
+            android:layout_marginVertical="10dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/city_eve"
+            app:qmui_corner_radius="5dp" />
+
+        <com.qmuiteam.qmui.widget.QMUIRadiusImageView
+            android:layout_width="150dp"
+            android:layout_height="120dp"
+            android:layout_marginHorizontal="8dp"
+            android:layout_marginVertical="10dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/city_eve"
+            app:qmui_corner_radius="5dp" />
+
+
+    </LinearLayout>
+
+
+    <View
+        android:id="@+id/divider12"
+        android:layout_width="350dp"
+        android:layout_height="1dp"
+        android:layout_marginTop="220dp"
+        android:background="?android:attr/listDivider"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView26"
+        style="@style/second_title_hotelInfo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/sp_nearby"
+        app:layout_constraintStart_toStartOf="@+id/textView24"
+        app:layout_constraintTop_toBottomOf="@+id/divider12" />
+
+    <TextView
+        android:id="@+id/textView28"
+        style="@style/second_shortcut_hotelInfo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/hint_learnAll"
+        app:layout_constraintBottom_toBottomOf="@+id/textView26"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/textView26" />
+
+
+    <LinearLayout
+        android:id="@+id/linearLayout3"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:gravity="center_horizontal"
+        app:layout_constraintBottom_toBottomOf="@id/divider13"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/textView26">
+
+        <com.qmuiteam.qmui.layout.QMUILinearLayout
+            android:layout_width="100dp"
+            android:layout_height="120dp"
+            android:background="@color/qmui_config_color_pressed"
+            android:clickable="true"
+            android:focusable="auto"
+            android:foreground="?attr/selectableItemBackground"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginBottom="20dp"
+                android:src="@drawable/sp_att_scenic" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/sp_att_scenic" />
+        </com.qmuiteam.qmui.layout.QMUILinearLayout>
+
+        <com.qmuiteam.qmui.layout.QMUILinearLayout
+
+            android:layout_width="100dp"
+            android:layout_height="120dp"
+            android:layout_marginStart="8dp"
+            android:background="@color/qmui_config_color_pressed"
+            android:clickable="true"
+            android:focusable="auto"
+            android:foreground="?attr/selectableItemBackground"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginBottom="20dp"
+                android:src="@drawable/sp_att_museum" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/sp_att_museum" />
+        </com.qmuiteam.qmui.layout.QMUILinearLayout>
+
+        <com.qmuiteam.qmui.layout.QMUILinearLayout
+
+            android:layout_width="100dp"
+            android:layout_height="120dp"
+            android:layout_marginStart="8dp"
+            android:background="@color/qmui_config_color_pressed"
+            android:clickable="true"
+            android:focusable="auto"
+            android:foreground="?attr/selectableItemBackground"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginBottom="20dp"
+                android:src="@drawable/sp_att_relics" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/sp_att_relics" />
+        </com.qmuiteam.qmui.layout.QMUILinearLayout>
+    </LinearLayout>
+
+
+    <View
+        android:id="@+id/divider13"
+        android:layout_width="350dp"
+        android:layout_height="1dp"
+        android:layout_marginTop="208dp"
+        android:background="?android:attr/listDivider"
+        app:layout_constraintEnd_toEndOf="@+id/divider12"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/divider12"
+        app:layout_constraintTop_toBottomOf="@+id/divider12" />
+
+    <TextView
+        android:id="@+id/textView29"
+        style="@style/second_title_hotelInfo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/title_home_discount"
+        app:layout_constraintStart_toStartOf="@+id/textView26"
+        app:layout_constraintTop_toBottomOf="@+id/divider13" />
+
+    <TextView
+        android:id="@+id/textView30"
+        style="@style/second_shortcut_hotelInfo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/login_hint_learnMore"
+        app:layout_constraintBottom_toBottomOf="@+id/textView29"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/textView29" />
+
+    <com.qmuiteam.qmui.layout.QMUILinearLayout
+        android:layout_width="340dp"
+        android:layout_height="180dp"
+        android:layout_margin="20dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/shape_border_01"
+        app:layout_constraintBottom_toTopOf="@+id/divider14"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.492"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView29"
+        app:layout_constraintVertical_bias="0.333">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:text="双倍积分"
+            android:textSize="20sp" />
+
+
+    </com.qmuiteam.qmui.layout.QMUILinearLayout>
+
+    <View
+        android:id="@+id/divider14"
+        android:layout_width="350dp"
+        android:layout_height="1dp"
+        android:layout_marginTop="284dp"
+        android:background="?android:attr/listDivider"
+        app:layout_constraintEnd_toEndOf="@+id/divider13"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/divider13"
+        app:layout_constraintTop_toBottomOf="@+id/divider13" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

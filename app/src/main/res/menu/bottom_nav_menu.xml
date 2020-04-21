@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/homeFragment"
+        android:icon="@drawable/ic_home"
+        android:title="@string/home_tabBar"
+        android:visible="true" />
+    <item
+        android:id="@+id/bookFragment"
+        android:icon="@drawable/ic_book"
+        android:title="@string/book_tabBar"
+        android:visible="true" />
+    <item
+        android:id="@+id/historyFragment"
+        android:icon="@drawable/ic_history"
+        android:title="@string/history_tabBar"
+        android:visible="true" />
+    <item
+        android:id="@+id/profileFragment"
+        android:icon="@drawable/ic_person"
+        android:title="@string/profile_tabBar"
+        android:visible="true" />
+</menu>

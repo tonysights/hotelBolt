@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#ffffff"
+        android:fitsSystemWindows="true"
+        android:orientation="vertical"
+        tools:ignore="RtlHardcoded,HardcodedText,RtlSymmetry,SmallSp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="52dp"
+            android:background="@color/qmui_config_color_white"
+            android:gravity="center_vertical">
+
+            <ImageView
+                android:id="@+id/iv_clear"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:layout_marginStart="12dp"
+                android:background="@drawable/bg_ripple"
+                android:contentDescription="@string/app_name"
+                android:padding="7dp"
+                android:scaleType="centerInside"
+                android:src="@mipmap/ic_clear"
+                android:tint="#333333" />
+
+            <TextView
+                android:id="@+id/tv_title"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center_vertical"
+                android:paddingLeft="16dp"
+                android:text="@string/text_chooseDateRange"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="22sp"
+                android:textStyle="normal"
+                tools:ignore="RelativeOverlap,RtlSymmetry" />
+
+            <ImageView
+                android:id="@+id/iv_reduce"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:layout_marginRight="12dp"
+                android:background="@drawable/bg_ripple"
+                android:contentDescription="@string/app_name"
+                android:padding="6dp"
+                android:scaleType="centerInside"
+                android:src="@mipmap/ic_reduce"
+                android:tint="#333333" />
+
+            <ImageView
+                android:id="@+id/iv_increase"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:layout_marginRight="16dp"
+                android:background="@drawable/bg_ripple"
+                android:padding="8dp"
+                android:src="@mipmap/ic_increase"
+                android:tint="#333333"
+                tools:ignore="ContentDescription" />
+
+        </LinearLayout>
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:background="@color/half_transparent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:paddingLeft="16dp"
+                    android:paddingTop="12dp"
+                    android:paddingRight="16dp"
+                    android:paddingBottom="12dp">
+
+                    <com.qmuiteam.qmui.layout.QMUILinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center_horizontal"
+                        android:orientation="vertical"
+                        tools:ignore="NestedWeights">
+
+                        <TextView
+                            android:id="@+id/tv_left_week"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_vertical"
+                            android:text="@string/text_checkInDate"
+                            android:textColor="#000000"
+                            android:textSize="16sp"
+                            android:textStyle="bold"
+                            tools:ignore="RtlSymmetry" />
+
+                        <TextView
+                            android:id="@+id/tv_left_date"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="6dp"
+                            android:gravity="center_vertical"
+                            android:textColor="#000000"
+                            android:textSize="26sp"
+                            android:textStyle="bold"
+                            tools:ignore="RtlSymmetry" />
+                    </com.qmuiteam.qmui.layout.QMUILinearLayout>
+
+                    <View
+                        android:layout_width="1px"
+                        android:layout_height="match_parent"
+                        android:background="@color/line_color" />
+
+                    <com.qmuiteam.qmui.layout.QMUILinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center_horizontal"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/tv_right_week"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_vertical"
+                            android:text="@string/text_checkOutDate"
+                            android:textColor="#000000"
+                            android:textSize="16sp"
+                            android:textStyle="bold"
+                            tools:ignore="RtlSymmetry" />
+
+                        <TextView
+                            android:id="@+id/tv_right_date"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="6dp"
+                            android:gravity="center_vertical"
+                            android:textColor="#000000"
+                            android:textSize="26sp"
+                            android:textStyle="bold"
+                            tools:ignore="RtlSymmetry" />
+                    </com.qmuiteam.qmui.layout.QMUILinearLayout>
+                </LinearLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="46dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/yearWithMonth"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="32dp"
+                        android:text="@string/text_yearWithMonth"
+                        android:textSize="25sp"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <com.haibin.calendarview.CalendarView
+                    android:id="@+id/calendarView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#fff"
+                    app:calendar_height="55dp"
+                    app:calendar_padding="10dp"
+                    app:current_month_lunar_text_color="#CFCFCF"
+                    app:current_month_text_color="#4f4f4f"
+                    app:day_text_size="18sp"
+                    app:max_select_range="-1"
+                    app:min_select_range="-1"
+                    app:min_year="2004"
+                    app:month_view="xyz.tspace.calendarstyle.CustomRangeMonthView"
+                    app:month_view_show_mode="mode_only_current"
+                    app:other_month_text_color="#e1e1e1"
+                    app:scheme_text="假"
+                    app:scheme_text_color="#333"
+                    app:scheme_theme_color="#333"
+                    app:select_mode="range_mode"
+                    app:selected_text_color="#fff"
+                    app:selected_theme_color="@color/app_color_theme_6"
+                    app:week_background="#fff"
+                    app:week_text_color="#111"
+                    app:week_view="xyz.tspace.calendarstyle.CustomRangeWeekView"
+                    app:year_view_day_text_color="#333333"
+                    app:year_view_day_text_size="9sp"
+                    app:year_view_month_text_color="#ff0000"
+                    app:year_view_month_text_size="20sp"
+                    app:year_view_scheme_color="#f17706" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1px"
+                    android:layout_marginTop="12dp"
+                    android:layout_marginBottom="12dp"
+                    android:background="@color/line_color" />
+
+            </LinearLayout>
+        </androidx.core.widget.NestedScrollView>
+
+        <TextView
+            android:id="@+id/tv_commit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginBottom="12dp"
+            android:background="@drawable/bg_material"
+            android:gravity="center"
+            android:paddingTop="12dp"
+            android:paddingBottom="12dp"
+            android:text="@string/text_confirm"
+            android:textColor="#333333"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+</layout>

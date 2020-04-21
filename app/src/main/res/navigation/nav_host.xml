@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_host"
+    app:startDestination="@id/splashFragment">
+
+    <fragment
+        android:id="@+id/splashFragment"
+        android:name="xyz.tspace.hotelbolt.view.launch.SplashFragment"
+        android:label="SplashFragment"
+        tools:layout="@layout/fragment_splash">
+        <action
+            android:id="@+id/action_splashFragment_to_beginFragment"
+            app:destination="@id/beginFragment"
+            app:enterAnim="@anim/scale_enter"
+            app:exitAnim="@anim/scale_exit"
+            app:popEnterAnim="@anim/scale_enter"
+            app:popExitAnim="@anim/scale_exit" />
+        <action
+            android:id="@+id/action_splashFragment_to_navFragment"
+            app:destination="@id/navFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/beginFragment"
+        android:name="xyz.tspace.hotelbolt.view.launch.BeginFragment"
+        android:label="BeginFragment"
+        tools:layout="@layout/fragment_begin">
+        <action
+            android:id="@+id/action_beginFragment_to_loginFragment"
+            app:destination="@id/loginFragment"
+            app:enterAnim="@anim/scale_enter"
+            app:exitAnim="@anim/scale_exit"
+            app:popEnterAnim="@anim/scale_enter"
+            app:popExitAnim="@anim/scale_exit" />
+        <action
+            android:id="@+id/action_beginFragment_to_registerFragment"
+            app:destination="@id/registerFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="xyz.tspace.hotelbolt.view.launch.LoginFragment"
+        android:label="LoginFragment"
+        tools:layout="@layout/fragment_login">
+        <action
+            android:id="@+id/action_loginFragment_to_registerFragment"
+            app:destination="@id/registerFragment" />
+        <action
+            android:id="@+id/action_loginFragment_to_navFragment"
+            app:destination="@id/navFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/registerFragment"
+        android:name="xyz.tspace.hotelbolt.view.launch.RegisterFragment"
+        android:label="RegisterFragment"
+        tools:layout="@layout/fragment_register">
+        <action
+            android:id="@+id/action_registerFragment_to_navFragment"
+            app:destination="@id/navFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/navFragment"
+        android:name="xyz.tspace.hotelbolt.view.nav.NavFragment"
+        android:label="NavFragment"
+        tools:layout="@layout/fragment_bottom_nav">
+        <action
+            android:id="@+id/action_navFragment_to_personalInfoFragment"
+            app:destination="@id/personalInfoFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left" />
+        <action
+            android:id="@+id/action_navFragment_to_beginFragment"
+            app:destination="@id/beginFragment" />
+        <action
+            android:id="@+id/action_navFragment_to_rangeCalendarFragment"
+            app:destination="@id/rangeCalendarFragment" />
+        <action
+            android:id="@+id/action_navFragment_to_hotelListFragment"
+            app:destination="@id/hotelListFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/personalInfoFragment"
+        android:name="xyz.tspace.hotelbolt.view.identity.PersonalInfoFragment"
+        android:label="PersonalInfoFragment"
+        tools:layout="@layout/fragment_personal_info">
+        <action
+            android:id="@+id/action_personalInfoFragment_to_setInfoFragment"
+            app:destination="@id/setInfoFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/setInfoFragment"
+        android:name="xyz.tspace.hotelbolt.view.identity.SetInfoFragment"
+        android:label="SetInfoFragment"
+        tools:layout="@layout/fragment_personal_info" />
+    <fragment
+        android:id="@+id/rangeCalendarFragment"
+        android:name="xyz.tspace.hotelbolt.view.calendar.RangeCalendarFragment"
+        android:label="RangeCalendarFragment"
+        tools:layout="@layout/fragment_range_calendar" />
+    <fragment
+        android:id="@+id/hotelListFragment"
+        android:name="xyz.tspace.hotelbolt.view.hotels.HotelListFragment"
+        android:label="HotelListFragment"
+        tools:layout="@layout/fragment_list_hotel">
+        <action
+            android:id="@+id/action_hotelListFragment_to_hotelDetailFragment"
+            app:destination="@id/hotelDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/hotelDetailFragment"
+        android:name="xyz.tspace.hotelbolt.view.hotels.HotelDetailFragment"
+        android:label="fragment_hotel_detail"
+        tools:layout="@layout/fragment_hotel_detail">
+        <argument
+            android:name="hotelId"
+            app:argType="string"
+            android:defaultValue="1" />
+    </fragment>
+</navigation>

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:infiniteCard="http://schemas.android.com/apk/res-auto">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/card_background_01"
+        android:fitsSystemWindows="true">
+
+        <com.bakerj.infinitecards.InfiniteCardView
+            android:id="@+id/infiniteView"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            infiniteCard:animDuration="700"
+            infiniteCard:cardRatio="1.618"
+            infiniteCard:layout_constraintBottom_toBottomOf="parent"
+            infiniteCard:layout_constraintEnd_toEndOf="parent"
+            infiniteCard:layout_constraintStart_toStartOf="parent"
+            infiniteCard:layout_constraintTop_toTopOf="parent" />
+
+        <com.qmuiteam.qmui.alpha.QMUIAlphaImageButton
+
+            android:id="@+id/list_qmbtn"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ic_list"
+            infiniteCard:layout_constraintBottom_toBottomOf="@id/guideline39"
+            infiniteCard:layout_constraintEnd_toEndOf="parent"
+
+            infiniteCard:layout_constraintStart_toStartOf="parent"
+            infiniteCard:layout_constraintTop_toTopOf="@id/guideline39"
+            infiniteCard:layout_constraintVertical_bias="0.0" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline39"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            infiniteCard:layout_constraintGuide_percent="0.87" />
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</layout>

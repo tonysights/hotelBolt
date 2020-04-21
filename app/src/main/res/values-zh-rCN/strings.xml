@@ -1,0 +1,272 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">hotelBolt</string>
+
+    <!--    年月日-->
+    <string name="zh_year">年</string>
+    <string name="zh_month">月</string>
+    <string name="zh_day">日</string>
+
+    <!--配置、功能选择界面-->
+    <string name="page_preview">人脸属性检测（视频）</string>
+    <string name="page_ir_preview">红外活体检测（视频）</string>
+    <string name="page_face_recognize">人脸比对1:n（视频vs人脸库，RGB活体）</string>
+    <string name="page_ir_face_recognize">人脸比对1:n（视频vs人脸库，IR活体）</string>
+    <string name="page_single_image">人脸属性检测（图片）</string>
+    <string name="page_multi_image">人脸比对1:n（图片vs图片）</string>
+    <string name="page_face_manage">人脸批量注册管理</string>
+    <string name="get_device_finger_failed">获取设备指纹失败，错误码：%d</string>
+    <string name="choose_detect_degree">选择视频模式检测角度</string>
+    <string name="copy_device_fingerprint">复制设备指纹信息</string>
+    <string name="device_fingerprint_copied">设备指纹信息：\n%s\n已复制</string>
+    <string name="active_engine">激活引擎</string>
+    <string name="active_success">激活引擎成功</string>
+    <string name="already_activated">引擎已激活，无需再次激活</string>
+    <string name="active_failed">引擎激活失败，错误码为 %d</string>
+    <string name="library_not_found">未找到库文件，请检查是否有将.so文件放至工程的 app\\src\\main\\jniLibs 目录下</string>
+    <string name="ft_op_0">视频模式仅检测0度</string>
+    <string name="ft_op_90">视频模式仅检测90度</string>
+    <string name="ft_op_180">视频模式仅检测180度</string>
+    <string name="ft_op_270">视频模式仅检测270度</string>
+    <string name="ft_op_all">视频模式全方向人脸检测</string>
+
+    <!--人脸属性检测（图片） 界面-->
+    <string name="start_process">开始处理</string>
+    <string name="choose_local_image">选择本地图片</string>
+    <string name="processing">处理中</string>
+
+    <!--人脸比对1:n（图片vs图片） 界面-->
+    <string name="choose_main_image">选择主图</string>
+    <string name="add_item_image">添加比对图</string>
+    <string name="notice_choose_main_img">请先选择主图</string>
+    <string name="compare_failed">比对失败，错误码为 %d</string>
+
+    <!--各个界面获取本地图片失败提示-->
+    <string name="get_picture_failed">获取图片失败</string>
+
+    <!--各个界面获取权限失败时的提示-->
+    <string name="permission_denied">权限被拒绝！</string>
+
+    <!--各个界面引擎初始化失败的提示-->
+    <string name="init_failed">引擎初始化失败，错误码为 %d</string>
+    <string name="engine_not_initialized">引擎未初始化，错误码为 %d</string>
+
+    <!--单目、双目识别注册界面-->
+    <string name="register">注册</string>
+    <string name="switch_camera">切换相机</string>
+    <string name="switch_camera_failed">切换相机失败</string>
+    <string name="recognize_failed_notice">未通过:%s</string>
+    <string name="recognize_success_notice">通过:%s</string>
+    <string name="low_confidence_level">人脸置信度低</string>
+    <string name="specific_engine_init_failed">%s 初始化失败，错误码为:%d</string>
+    <string name="notice_change_detect_degree">相机已切换，若无法检测到人脸，需要在首页修改视频模式人脸检测角度</string>
+    <string name="liveness_detect">活体检测</string>
+    <string name="camera_rgb">RGB CAMERA</string>
+    <string name="camera_ir">IR CAMERA</string>
+    <string name="camera_rgb_preview_size">RGB CAMERA\n%dx%d</string>
+    <string name="camera_ir_preview_size">IR CAMERA\n%dx%d</string>
+    <string name="camera_error_notice">\n可能的原因：该设备不支持同时打开两个摄像头</string>
+    <string name="draw_ir_rect_mirror_horizontal">IR人脸框水平镜像绘制</string>
+    <string name="draw_ir_rect_mirror_vertical">IR人脸框垂直镜像绘制</string>
+
+    <!--人脸批量注册进度框-->
+    <string name="progress_dialog_batch_register">进度: %d / %d</string>
+    <string name="progress_dialog_registering_please_wait">注册中，请稍等</string>
+
+    <!--批量处理-->
+    <string name="ok">确定</string>
+    <string name="cancel">取消</string>
+    <string name="batch_process_notification_register">请将需要注册的图片放在\nsdcard/arcfacedemo/register\n目录下</string>
+    <string name="batch_process_no_face_need_to_delete">无人脸需要删除</string>
+    <string name="batch_process_confirm_delete">确认删除这%d张图片及人脸特征？</string>
+    <string name="batch_process_batch_register">批量注册</string>
+    <string name="batch_process_notification">提示</string>
+    <string name="batch_process_clear_faces">清空人脸库</string>
+    <string name="batch_process_path_is_not_exists">路径 \n%s\n 不存在</string>
+    <string name="batch_process_path_is_not_dir">路径 \n%s\n 不是文件夹</string>
+    <string name="batch_process_processing_please_wait">处理中，请稍等</string>
+    <string name="batch_process_finished_info">处理完成！\n处理总数 =  %d \n成功数 = %d \n失败数 = %d \n处理失败的图片已保存在文件夹 \' %s \'</string>
+
+
+    <string name="home_tabBar">主页</string>
+    <string name="book_tabBar">预定</string>
+    <string name="history_tabBar">住宿</string>
+    <string name="profile_tabBar">我的</string>
+    <string name="queryHint_home_searchView">告诉我们您想去哪里</string>
+    <string name="title_home_discover">探索新的地方</string>
+    <string name="title_home_discount">优惠和折扣</string>
+    <string name="title_home_vip">会员中心</string>
+    <string name="title_profile">我的账户</string>
+    <string name="bookpage_tab_book">查找</string>
+    <string name="bookpage_tab_reorder">重新预定</string>
+    <string name="bookpage_tab_fav">收藏</string>
+    <string name="login_button_wechat">使用微信登录</string>
+    <string name="login_button_account">使用账号密码登录</string>
+    <string name="login_hint_register">点击此处进行注册</string>
+    <string name="login_hint_learnMore">了解更多</string>
+    <string name="login_service_explain">请留意，当您点击注册或登录按钮即视为同意我们的服务条款</string>
+    <string name="button_click_login">点击登录</string>
+    <string name="button_click_register">点击注册</string>
+    <string name="button_login_noAccount">还没有账户？</string>
+    <string name="text_account">账户</string>
+    <string name="text_password">密码</string>
+    <string name="text_forget">忘记密码了？</string>
+    <string name="text_login">登录</string>
+    <string name="text_register">注册</string>
+    <string name="text_confirmPassword">确认密码</string>
+    <string name="text_checkIn">入住</string>
+    <string name="text_checkOut">退房</string>
+    <string name="text_room">房间</string>
+    <string name="text_guest">成人</string>
+    <string name="text_child">儿童</string>
+    <string name="default_now_date">3月2日</string>
+    <string name="text_specialDiscount">特惠房间</string>
+    <string name="text_usingIntegral">使用积分消费</string>
+    <string name="text_more_choice">更多选项</string>
+    <string name="text_searchHotel">查找酒店</string>
+    <string name="text_enter">进入</string>
+    <string name="text_hintForInputAccount">账号</string>
+    <string name="text_areadyHaveAccount">已经有账号了？</string>
+    <string name="text_hint_correctAccountAndPw">请再次检查您的账号和密码</string>
+    <string name="text_loading">加载中……</string>
+    <string name="text_wrongPassword">用户名或密码错误，请重试</string>
+    <string name="text_loginSuccess">登录成功</string>
+    <string name="text_networkError">网络连接错误</string>
+    <string name="text_repeatPassword">确认密码</string>
+    <string name="text_nickName">用户名</string>
+    <string name="text_regSuccess">注册成功</string>
+    <string name="text_regFail">注册失败</string>
+    <string name="text_avatar">头像</string>
+    <string name="tip_completeIdentity">账号资料</string>
+    <string name="text_username">用户名</string>
+    <string name="text_menu">菜单</string>
+    <string name="text_msg">"消息 "</string>
+    <string name="text_arrowDown">箭头</string>
+    <string name="text_quickShortcut">快捷入口</string>
+    <string name="text_defaultLocation">默认地址</string>
+    <string name="text_hotels">酒店</string>
+    <string name="text_add_to_fav">添加到收藏</string>
+    <string name="text_select">选项</string>
+    <string name="title_activity_hotel">酒店活动</string>
+    <string name="next">下一个</string>
+    <string name="previous">上一个</string>
+    <string name="title_my_tool">工具栏</string>
+    <string name="title_checkMoreTools">了解更多</string>
+    <string name="title_travelGrowth">旅行成长值</string>
+    <string name="text_myFav">我的收藏</string>
+    <string name="text_browserHistory">浏览历史</string>
+    <string name="text_journeyList">旅行清单</string>
+    <string name="text_vouchers">优惠券</string>
+    <string name="text_personalInfo">个人信息</string>
+    <string name="text_qrcode">二维码</string>
+    <string name="text_faceIdentify">人脸信息</string>
+    <string name="text_ARTourGuide">AR导航</string>
+    <string name="text_memberPrivCode">会员权益码</string>
+    <string name="text_feedback">信息反馈</string>
+    <string name="text_journeyMenu">旅行菜单</string>
+    <string name="text_arExperimental">AR实验室</string>
+    <string name="text_allOrders">所有订单</string>
+    <string name="text_pending">待支付</string>
+    <string name="text_tourPlan">出行计划</string>
+    <string name="text_toBeCommented">待评论</string>
+    <string name="tag_cost_effective">性价比高</string>
+    <string name="symbol_money">￥</string>
+    <string name="title_recommendHotel">为您推荐</string>
+    <string name="text_menu_search">搜索</string>
+    <string name="action_setting">设置</string>
+    <string name="text_priceFormat">" CN￥平均 / 晚"</string>
+    <string name="text_checkPrice">查看价格</string>
+    <string name="text_price_low_to_high">价格从低到高</string>
+    <string name="text_price_high_to_low">价格从高到低</string>
+    <string name="text_popularity_low_to_high">人气从低到高</string>
+    <string name="text_popularity_high_to_low">人气从高到低</string>
+    <string name="text_findSuitableHotel">寻找适合您的酒店</string>
+    <string name="text_local_temperature">气温</string>
+    <string name="text_default_weather">晴</string>
+    <string name="text_local_weather">天气</string>
+    <string name="text_default_rating_stars">4.5星</string>
+    <string name="text_default_hotelIntro">在杭州博悦酒店，您可以尽情享受奢华的江南式居住环境，欣赏美丽的钱塘江景，探索充满活力的钱江新城。从别具一格的餐饮和充满艺术气息的设计到令人惊叹的活动空间以及对服务的不断追求，杭州泊悦酒店每次都能为您带来奢华由心的体验。</string>
+    <string name="sp_swimpool">游泳池</string>
+    <string name="sp_room_service">客房送餐服务</string>
+    <string name="sp_hotel_restaurant">酒店餐厅</string>
+    <string name="sp_free_wifi">免费WIFI</string>
+    <string name="sp_vip">礼宾服务</string>
+    <string name="sp_gym">健身房</string>
+    <string name="text_sp_equip">特色设施</string>
+    <string name="text_pics">图片</string>
+    <string name="hint_learnAll">查看所有</string>
+    <string name="sp_dining_options">餐饮选择</string>
+    <string name="sp_roomType">房间类型</string>
+    <string name="roomtype_room">客房</string>
+    <string name="roomtype_suite">套房</string>
+    <string name="action_bookNow">立即预定</string>
+    <string name="unit_cnyPerNight">元/晚</string>
+    <string name="unit_default_cnPrice">CN￥1,170</string>
+    <string name="sp_nearby">周边景点</string>
+    <string name="text_default_bookTime">3月22日（周日）—— 3月23日（周一）</string>
+    <string name="sp_att_museum">博物馆</string>
+    <string name="sp_att_relics">遗址</string>
+    <string name="sp_att_scenic">景区</string>
+    <string name="text_publicTraffic">泊车和公交</string>
+    <string name="search_hotSpot">热搜</string>
+    <string name="search_history">搜索历史</string>
+    <string name="tip_beforeBooking">考虑到最近新冠肺炎病毒疫情的发展，为安全起见，即日起酒店内的部分餐厅、酒吧及休闲娱乐设施的营业时间及服务内容将会受到影响
+    并跳转。详情或询问，请直接致电酒店确认</string>
+    <string name="tip_enableScaningFace">点击按钮，开启人脸识别模式</string>
+    <string name="text_unverifiedID">"您还未核验身份 "</string>
+    <string name="text_preferTradtion">我更喜欢传统登记方式</string>
+    <string name="text_recommend">推荐</string>
+    <string name="text_realName">真实姓名</string>
+    <string name="text_gender">性别</string>
+    <string name="text_id">用户编号</string>
+    <string name="text_email">电子邮箱</string>
+    <string name="text_birthday">出生日期</string>
+    <string name="text_motto">个性签名</string>
+    <string name="text_contact">联系方式</string>
+    <string name="text_phone">手机</string>
+    <string name="text_wechat">微信</string>
+    <string name="city_hangzhou">杭州</string>
+    <string name="city_huzhou">湖州</string>
+    <string name="text_chooseDateRange">选择日期</string>
+    <string name="text_confirm">确认</string>
+    <string name="text_payingOrders">待付款</string>
+    <string name="text_paidOrders">已支付</string>
+    <string name="text_pendingOrders">待评论</string>
+    <string name="text_order">订单</string>
+    <string name="text_order_status">订单状态</string>
+    <string name="text_orderTitle">订单标题</string>
+    <string name="text_orderNo">No.1232348</string>
+    <string name="text_orderValue">￥1234.56</string>
+    <string name="text_order_sum">总计2两件商品</string>
+    <string name="text_order_detail">XX酒店预定</string>
+    <string name="text_order_price">￥998.50</string>
+    <string name="text_month_day">%d月%d日</string>
+    <string name="text_exploreHotel">探索酒店和度假圣地</string>
+    <string name="text_exploreScene">发现更多风景名胜</string>
+    <string name="text_theme">主题</string>
+    <string name="text_offers">%d折优惠</string>
+    <string name="text_topRecommend">热门推荐</string>
+    <string name="title_registeredFaceInfo">已注册面部信息</string>
+    <string name="title_registeredTime">注册时间：%s</string>
+    <string name="title_addFace">添加新的面部信息</string>
+    <string name="title_learnSecurePolicy">保密政策</string>
+    <string name="week_mon">周一</string>
+    <string name="week_tue">"周二 "</string>
+    <string name="week_wed">"周三 "</string>
+    <string name="week_thur">"周四 "</string>
+    <string name="week_fri">周五</string>
+    <string name="week_sat">周六</string>
+    <string name="week_sun">周日</string>
+    <string name="text_yearWithMonth">%d年 %d月</string>
+    <string name="text_selected">精选</string>
+    <string name="expiredId">您的身份信息已过期，请重新登陆</string>
+    <string name="text_expiredIdTitle">重新登陆</string>
+    <string name="text_hintForModifyUsername">请输入您要修改的用户名</string>
+    <string name="text_modifyUsername">修改用户名</string>
+    <string name="text_save">保存</string>
+    <string name="text_hintForOffendingUsername">用户名中不能出现违规词汇</string>
+    <string name="kt_yearWithMonth">$year年$month月</string>
+    <string name="text_checkInDate">入住日期</string>
+    <string name="text_checkOutDate">退房日期</string>
+    <string name="text_hotelDetail">酒店详细信息</string>
+</resources>

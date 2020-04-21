@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#52AEF7</color>
+    <color name="colorPrimaryDark">#3F9FEB</color>
+    <color name="colorAccent">#D81B60</color>
+    <color name="title_text_color">#5B7CA3</color>
+    <!--    注册提示-->
+    <color name="register_hint_textColor">#459ADD</color>
+    <!--    仿按钮按压效果-->
+    <color name="register_transparent_press_color">#3A011B07</color>
+
+    <color name="searchView_default_color">#A5F4CD57</color>
+    <color name="splash_bg_tint">#6BCED7DD</color>
+    <color name="entire_transparent">#00FFFFFF</color>
+    <color name="half_transparent">#71FFFFFF</color>
+
+
+    <color name="default_BookPage_backgroundColor">#B5EFF1F2</color>
+
+
+    <color name="app_color_theme_1">#EF5362</color> <!-- Grapefruit -->
+    <color name="app_color_theme_2">#FE6D4B</color> <!-- Bittersweet -->
+    <color name="app_color_theme_3">#FFCF47</color> <!-- Sunflower -->
+    <color name="app_color_theme_4">#9FD661</color> <!-- Grass -->
+    <color name="app_color_theme_5">#3FD0AD</color> <!-- Mint -->
+    <color name="app_color_theme_6">#2BBDF3</color> <!-- Aqua -->
+    <color name="app_color_theme_7">#5A9AEF</color> <!-- Blue Jeans -->
+    <color name="app_color_theme_8">#AC8FEF</color> <!-- Lavender -->
+    <color name="app_color_theme_9">#EE85C1</color> <!-- Pink Rose -->
+    <color name="app_color_theme_10">#3675C4</color> <!-- Pink Rose -->
+    <color name="color_bg_notification">#80000000</color>
+    <color name="color_bg_name">#80000000</color>
+    <color name="app_color_theme_11">#0081C6</color>
+    <color name="line_color">#e7e7e7</color>
+    <color name="thin_color_theme_6">#D3ECF5</color> <!-- Aqua -->
+</resources>

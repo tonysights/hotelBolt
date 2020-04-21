@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.qmuiteam.qmui.layout.QMUIConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/qmcl_item_list"
+    android:layout_width="match_parent"
+    android:layout_height="248dp"
+    android:layout_marginStart="15dp"
+    android:layout_marginTop="15dp"
+    android:layout_marginEnd="15dp"
+    android:background="@color/qmui_config_color_white"
+    android:clickable="true"
+    android:focusable="true"
+    android:foreground="?attr/selectableItemBackground">
+
+    <ImageView
+        android:id="@+id/hotelImage"
+        android:layout_width="match_parent"
+        android:layout_height="132dp"
+        android:contentDescription="@string/text_pics"
+        android:scaleType="centerCrop"
+        android:translationZ="0dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:src="@drawable/city_eve" />
+
+    <TextView
+        android:id="@+id/hotelName_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif-black"
+        android:text="@+id/hotelName"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/star_tv"
+        app:layout_constraintTop_toBottomOf="@+id/hotelImage"
+        app:layout_constraintVertical_bias="0.089"
+        tools:text="杭州君悦酒店" />
+
+    <TextView
+        android:id="@+id/star_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:fontFamily="sans-serif-thin"
+        android:text="4星级"
+        android:textColor="@color/qmui_config_color_gray_3"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/rating"
+        app:layout_constraintTop_toBottomOf="@+id/hotelName_tv"
+        app:layout_constraintVertical_bias="0.13" />
+
+    <com.qmuiteam.qmui.layout.QMUILinearLayout
+        android:id="@+id/priceLayout"
+        android:layout_width="100dp"
+        android:layout_height="90dp"
+        android:background="@color/app_color_theme_10"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:translationZ="1dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/favButton"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.614">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_weight="1"
+            android:text="@string/text_priceFormat"
+            android:textColor="@color/qmui_config_color_white"
+            android:textSize="12sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/price_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textColor="@color/qmui_config_color_white"
+            android:textSize="18sp"
+            tools:text="US$150" />
+
+        <TextView
+            android:id="@+id/checkIn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/text_checkPrice"
+            android:textColor="@color/qmui_config_color_white"
+            android:textStyle="bold"
+            tools:text="@string/text_checkPrice" />
+
+    </com.qmuiteam.qmui.layout.QMUILinearLayout>
+
+    <RatingBar
+        android:id="@+id/rating"
+        style="@style/Widget.AppCompat.RatingBar.Small"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layerType="none"
+        android:rating="4.3"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/location_tv"
+        app:layout_constraintTop_toBottomOf="@+id/star_tv"
+        app:layout_constraintVertical_bias="0.13999999" />
+
+    <TextView
+        android:id="@+id/location_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/text_default_location"
+        android:textColor="@color/qmui_config_color_gray_5"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.105"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rating"
+        app:layout_constraintVertical_bias="0.35000002" />
+
+    <TextView
+        android:id="@+id/commentsNum_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif-condensed"
+        android:text="145"
+        android:textColor="@color/qmui_config_color_gray_3"
+        app:layout_constraintBottom_toBottomOf="@+id/rating"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.04"
+        app:layout_constraintStart_toEndOf="@+id/rating"
+        app:layout_constraintTop_toTopOf="@+id/rating"
+        app:layout_constraintVertical_bias="0.673"
+        tools:text="145" />
+
+    <ImageButton
+        android:id="@+id/favButton"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:scaleType="centerCrop"
+        app:layout_constraintBottom_toTopOf="@+id/QMUILinearLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.95"
+        app:layout_constraintStart_toStartOf="@+id/hotelImage"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.13"
+        app:srcCompat="@drawable/ic_favorite_border_white_24dp" />
+
+
+</com.qmuiteam.qmui.layout.QMUIConstraintLayout>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:title="@string/title_addFace"
+        android:icon="@drawable/ic_add_blue_24dp"
+        />
+    <item
+        android:title="@string/title_learnSecurePolicy"
+        android:icon="@drawable/ic_security_grey_24dp"
+        />
+
+</menu>

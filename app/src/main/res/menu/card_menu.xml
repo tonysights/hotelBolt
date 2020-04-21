@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item android:title="@string/text_add_to_fav"
+        app:showAsAction="always"
+        android:icon="@drawable/ic_star_border_gray_24dp"
+        />
+    <item android:title="selection"
+        android:icon="@drawable/ic_toc_black_24dp"
+        app:showAsAction="always"
+        />
+</menu>

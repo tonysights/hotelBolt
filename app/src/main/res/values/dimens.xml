@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--        首页矩形Logo尺寸-->
+    <dimen name="logo_reta_suze">95dp</dimen>
+    <!--        卡片圆角-->
+    <dimen name="card_radius">3dp</dimen>
+    <!--        侧拉外边距-->
+    <dimen name="horizon_scrollView_margin">0dp</dimen>
+
+    <!--    我的页面头像尺寸-->
+    <dimen name="profile_img_size">150dp</dimen>
+    <dimen name="profile_img_radius">50dp</dimen>
+    <dimen name="page_horizen_padding">10dp</dimen>
+    <!--    首页同一行卡片之间的间隔-->
+    <dimen name="card_gape">5dp</dimen>
+
+    <!--    登录页圆角按钮曲率-->
+    <dimen name="login_page_roundButton_radius">10dp</dimen>
+    <dimen name="login_page_roundButton_height">0dp</dimen>
+    <dimen name="login_page_roundButton_margin">5dp</dimen>
+
+    <!--    计时圆角按钮内边距-->
+    <dimen name="splash_page_roundButton_paddingH">20dp</dimen>
+    <dimen name="splash_page_roundButton_paddingV">5dp</dimen>
+    <dimen name="login_button_textSize">18sp</dimen>
+
+    <!--    账号登陆页输入框字体大小-->
+    <dimen name="login_account_editTextSize">18sp</dimen>
+    <dimen name="login_account_editTextFrameSize">38dp</dimen>
+    <dimen name="login_account_editTextFrameWidth">310dp</dimen>
+    <dimen name="login_account_editTextPaddingStart">10dp</dimen>
+
+
+    <!--    账号登陆页标题字体大小-->
+    <dimen name="login_page_textSize">30sp</dimen>
+    <dimen name="fab_margin">16dp</dimen>
+
+</resources>

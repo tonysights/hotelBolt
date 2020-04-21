@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!--    虹软SDK-->
+    <string name="ARCFACE_APPID" translatable="false">E7Kp2qcN22aJQFNmF4fx3d3qTcpUiRe29kzrw3XTMJbo</string>
+    <string name="ARCFACE_SDKKEY" translatable="false">9kegcnvWU7rzdficir9gsaXvQeAaNUQrPukQUR5SFtdo</string>
+
+
+    <!--    SharedPreference-->
+    <string name="key_userShp" translatable="false">USER_SHP</string>
+    <string name="key_searchShp" translatable="false">SEARCH_SHP</string>
+    <string name="key_token" translatable="false">UserToken</string>
+    <string name="key_token_createdTime" translatable="false">TokenCreatedTime</string>
+
+
+    <string name="key_loginCode" translatable="false">loginCode</string>
+
+    <string name="key_userAccount" translatable="false">userAccount</string>
+    <string name="key_userPassword" translatable="false">userPassword</string>
+
+    <string name="key_searchHistoryList" translatable="false">searchHistorySet</string>
+
+    <!--    单订单最多同时预定房间数-->
+    <integer name="max_rooms_per_order">2</integer>
+    <integer name="max_adult_per_order">5</integer>
+    <integer name="max_kid_per_order">4</integer>
+
+    <!--LiveData-->
+    <string name="key_flag_firstLaunch" translatable="false">flag_firstLaunch</string>
+    <string name="key_flag_hasSplashed" translatable="false">flag_hasSplashed</string>
+    <string name="key_data_userData" translatable="false">data_userData</string>
+    <string name="key_room_num_list" translatable="false">roomNumList</string>
+    <string name="key_room_num" translatable="false">roomNum</string>
+    <string name="key_adult_num" translatable="false">adultNum</string>
+    <string name="key_kid_num" translatable="false">kidNum</string>
+
+
+    <integer name="ACTION_REQUEST_PERMISSIONS">0x001</integer>
+    <integer name="NETWORK_ERROR">5</integer>
+    <integer name="LOGIN_SUCCESS">1</integer>
+    <integer name="LOGIN_FAIL">2</integer>
+    <integer name="REGISTER_SUCCESS">3</integer>
+    <integer name="REGISTER_FAIL">4</integer>
+
+
+</resources>

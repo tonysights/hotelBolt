@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--        预定页面3个tab选项卡的标题-->
+    <string-array name="book_tab_array">
+        <item>@string/bookpage_tab_book</item>
+        <item>@string/bookpage_tab_reorder</item>
+        <item>@string/bookpage_tab_fav</item>
+    </string-array>
+    <string-array name="order_price">
+        <item>@string/text_price_low_to_high</item>
+        <item>@string/text_price_high_to_low</item>
+    </string-array>
+    <string-array name="order_popularity">
+        <item>@string/text_popularity_low_to_high</item>
+        <item>@string/text_popularity_high_to_low</item>
+    </string-array>
+
+
+    <string-array name="Zhejiang_city">
+        <item>Hangzhou</item>
+        <item>Huzhou</item>
+        <item>Shaoxing</item>
+        <item>Ningbo</item>
+        <item>Jiaxing</item>
+        <item>Lishui</item>
+        <item>Taizhou</item>
+        <item>Wenzhou</item>
+        <item>Jinhua</item>
+        <item>Quzhou</item>
+        <item>Zhoushan</item>
+    </string-array>
+
+    <string-array name="order_tab_array">
+        <item>@string/text_allOrders</item>
+        <item>@string/text_payingOrders</item>
+        <item>@string/text_paidOrders</item>
+        <item>@string/text_pendingOrders</item>
+    </string-array>
+    <string-array name="week_array">
+        <item>@string/week_mon</item>
+        <item>@string/week_tue</item>
+        <item>@string/week_wed</item>
+        <item>@string/week_thur</item>
+        <item>@string/week_fri</item>
+        <item>@string/week_sat</item>
+        <item>@string/week_sun</item>
+    </string-array>
+</resources>

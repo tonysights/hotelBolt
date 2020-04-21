@@ -1,0 +1,289 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/default_BookPage_backgroundColor"
+
+    tools:context=".view.hotels.HotelDetailFragment">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/default_BookPage_backgroundColor"
+        app:elevation="0dp">
+
+        <com.google.android.material.appbar.CollapsingToolbarLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="200dp"
+            app:collapsedTitleTextAppearance="@style/collapsing_collapsedStyle"
+            app:contentScrim="@color/colorPrimaryDark"
+            app:expandedTitleGravity="top"
+            app:expandedTitleTextAppearance="@style/collapsing_expandedStyle"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed|snap"
+            app:scrimAnimationDuration="300"
+            app:statusBarScrim="@color/default_BookPage_backgroundColor"
+            app:title="@string/text_hotelDetail"
+            app:titleEnabled="true">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:orientation="vertical">
+
+                <com.youth.banner.Banner
+                    android:id="@+id/bannerTop"
+                    android:layout_width="match_parent"
+                    app:indicator_gravity="center"
+                    android:layout_height="270dp">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <com.qmuiteam.qmui.widget.QMUIRadiusImageView
+                            android:id="@+id/alpha_btn1"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/ic_chevron_left_trans_gray_24dp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.041"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintVertical_bias="0.26"
+                            app:qmui_border_width="0.2dp"
+                            app:qmui_corner_radius="20dp" />
+
+
+                        <com.qmuiteam.qmui.widget.QMUIRadiusImageView
+                            android:id="@+id/alpha_btn2"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:src="@drawable/ic_share_trans_gray_24dp"
+                            app:layout_constraintBottom_toBottomOf="@+id/alpha_btn1"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.93"
+                            app:layout_constraintStart_toEndOf="@+id/alpha_btn1"
+                            app:layout_constraintTop_toTopOf="@+id/alpha_btn1"
+                            app:qmui_border_width="0.2dp"
+                            app:qmui_corner_radius="20dp" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </com.youth.banner.Banner>
+
+                <include
+                    layout="@layout/include_hotel_description"
+                    android:layout_width="345dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginVertical="10dp" />
+
+            </LinearLayout>
+
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:fitsSystemWindows="true"
+                android:paddingTop="20dp"
+                android:layout_marginTop="20dp"
+                app:layout_collapseMode="pin">
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/toolbarDetail"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <com.qmuiteam.qmui.alpha.QMUIAlphaImageButton
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/ic_arrow_back_white_24dp"
+                        app:layout_constraintBottom_toBottomOf="@+id/toolbarTitle"
+                        app:layout_constraintEnd_toStartOf="@+id/toolbarTitle"
+                        app:layout_constraintHorizontal_bias="0.36"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="@+id/toolbarTitle" />
+
+                    <TextView
+                        android:id="@+id/toolbarTitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/yashihei"
+                        android:text="@string/text_hotelDetail"
+                        android:textColor="@color/qmui_config_color_white"
+                        android:textSize="20sp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@+id/toolbarShare"
+                        app:layout_constraintHorizontal_bias="0.21"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+
+                    <com.qmuiteam.qmui.alpha.QMUIAlphaImageButton
+                        android:id="@+id/toolbarShare"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:contentDescription="@string/text_pics"
+                        android:foregroundGravity="center|right"
+                        android:src="@drawable/ic_share_white_24dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.93"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </androidx.appcompat.widget.Toolbar>
+        </com.google.android.material.appbar.CollapsingToolbarLayout>
+
+        <com.google.android.material.tabs.TabLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:tabIndicatorColor="@color/app_color_theme_11">
+
+            <com.google.android.material.tabs.TabItem
+                android:id="@+id/tabItem"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="" />
+
+            <com.google.android.material.tabs.TabItem
+                android:id="@+id/tabItem2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="" />
+        </com.google.android.material.tabs.TabLayout>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/nestedScrollView2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/qmui_config_color_75_white"
+        android:fillViewport="true"
+        app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <include
+                android:id="@+id/intro"
+                layout="@layout/include_hotel_info"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp" />
+
+            <include
+                android:id="@+id/spec"
+                layout="@layout/include_hotel_special"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp" />
+
+            <include
+                android:id="@+id/add"
+                layout="@layout/include_hotel_additional"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp" />
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardview"
+        android:layout_width="match_parent"
+        android:layout_height="65dp"
+        android:layout_gravity="bottom"
+        android:elevation="5dp"
+        android:translationZ="3dp"
+        app:cardBackgroundColor="@color/default_BookPage_backgroundColor"
+        app:layout_behavior="com.google.android.material.behavior.HideBottomViewOnScrollBehavior">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:elevation="5dp"
+            android:translationZ="3dp">
+
+            <com.qmuiteam.qmui.layout.QMUILinearLayout
+                android:id="@+id/QMUILinearLayout3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@color/qmui_config_color_gray_9"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.09"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.19">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:maxLines="1"
+                    android:text="@string/text_default_bookTime"
+                    android:textSize="12sp" />
+
+            </com.qmuiteam.qmui.layout.QMUILinearLayout>
+
+            <com.qmuiteam.qmui.layout.QMUIButton
+                android:id="@+id/orderAtOnce_btn"
+                android:layout_width="80dp"
+                android:layout_height="40dp"
+                android:layout_marginEnd="20dp"
+                android:background="@color/app_color_theme_11"
+                android:clickable="true"
+                android:focusable="true"
+                android:fontFamily="sans-serif-medium"
+                android:foreground="?attr/selectableItemBackground"
+                android:text="@string/action_bookNow"
+                android:textColor="@color/qmui_config_color_75_white"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/bookNowPrice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/unit_default_cnPrice"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/QMUILinearLayout3"
+                app:layout_constraintHorizontal_bias="0.05"
+                app:layout_constraintStart_toStartOf="@+id/QMUILinearLayout3"
+                app:layout_constraintTop_toBottomOf="@+id/QMUILinearLayout3" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/unit_cnyPerNight"
+                app:layout_constraintBottom_toBottomOf="@+id/bookNowPrice"
+                app:layout_constraintEnd_toStartOf="@+id/orderAtOnce_btn"
+                app:layout_constraintHorizontal_bias="0.38"
+                app:layout_constraintStart_toEndOf="@+id/bookNowPrice"
+                app:layout_constraintTop_toTopOf="@+id/bookNowPrice" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
+

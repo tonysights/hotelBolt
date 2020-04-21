@@ -1,0 +1,317 @@
+<resources>
+    <string name="app_name">hotelBolt</string>
+    <string name="token_init" translatable="false">TOKEN_INIT</string>
+    <string name="token_expired" translatable="false">TOKEN_EXPIRED</string>
+
+    <!--    底部导航按钮-->
+    <string name="home_tabBar">Home</string>
+    <string name="book_tabBar">Book</string>
+    <string name="history_tabBar">Order</string>
+    <string name="profile_tabBar">Mine</string>
+    <string name="queryHint_home_searchView">Told us where to go</string>
+
+    <!--    首页小标题-->
+    <string name="title_home_discover">To Discover New Places</string>
+    <string name="title_home_discount">Promotions and offers</string>
+    <string name="title_home_vip">Member Center</string>
+
+    <!--    我的页面标题-->
+    <string name="title_profile">My Account</string>
+
+    <!--        预定页面3个tab选项卡的标题-->
+    <string name="bookpage_tab_book">Search</string>
+    <string name="bookpage_tab_reorder">Reorder</string>
+    <string name="bookpage_tab_fav">Favourite</string>
+
+
+    <string name="hello_blank_fragment" translatable="false">Hello blank fragment</string>
+    <string name="login_button_wechat">Sign in with WeChat</string>
+    <string name="login_button_account">Sign in with your Account</string>
+    <string name="login_hint_register">Click here to register</string>
+    <string name="login_hint_learnMore">Learn More…</string>
+    <string name="login_service_explain">Please be aware that clicking on the login or registration button means that you have agreed to our Terms of Service.</string>
+    <string name="button_click_login">Click to login</string>
+    <string name="button_click_register">Click to sign up</string>
+    <string name="button_login_noAccount">Don\'t have an account yet?</string>
+    <string name="text_account">Account</string>
+    <string name="text_password">Password</string>
+    <string name="text_forget">Forgot your password?</string>
+    <string name="text_login">Sign in</string>
+    <string name="text_register">Sign up</string>
+    <string name="text_confirmPassword">Confirm</string>
+    <string name="text_checkIn">Check In</string>
+    <string name="text_checkOut">Check Out</string>
+
+
+    <!--虹软-->
+    <!--settings、choose function page-->
+    <string name="page_preview">face attributes detect(video)</string>
+    <string name="page_ir_preview">ir liveness detect(video)</string>
+    <string name="page_face_recognize">face compare 1:n(video vs database,rgb liveness detect)</string>
+    <string name="page_ir_face_recognize">face compare 1:n(video vs database,ir liveness detect)</string>
+    <string name="page_single_image">face attributes detect(image)</string>
+    <string name="page_multi_image">face compare 1:n(image vs image)</string>
+    <string name="page_face_manage">face manage</string>
+    <string name="get_device_finger_failed">get device finger failed, code is: %d</string>
+    <string name="choose_detect_degree">choose video-mode detect degree</string>
+    <string name="copy_device_fingerprint">copy device fingerprint</string>
+    <string name="device_fingerprint_copied">device fingerprint：：\n%s\n copied</string>
+    <string name="active_engine">active engine</string>
+    <string name="active_success">active success</string>
+    <string name="already_activated">already activated</string>
+    <string name="active_failed">active failed,code is %d</string>
+    <string name="library_not_found">library not found, please check if you put .so files into the project directory app\\src\\main\\jniLibs</string>
+    <string name="ft_op_0">only detect 0 degree in video mode</string>
+    <string name="ft_op_90">only detect 90 degree in video mode</string>
+    <string name="ft_op_180">only detect 180 degree in video mode</string>
+    <string name="ft_op_270">only detect 270 degree in video mode</string>
+    <string name="ft_op_all">detect all degrees in video mode</string>
+
+    <!--face attributes detect(image) page-->
+    <string name="start_process">process</string>
+    <string name="choose_local_image">choose local image</string>
+    <string name="processing">processing</string>
+
+    <!--face compare 1:n(image vs image) page-->
+    <string name="choose_main_image">choose main image</string>
+    <string name="add_item_image">add item image</string>
+    <string name="notice_choose_main_img">please choose main image first</string>
+    <string name="compare_failed">compare failed!code is %d</string>
+
+    <!--global get picture failed notification-->
+    <string name="get_picture_failed">failed to get picture!</string>
+
+    <!--global permission denied notification-->
+    <string name="permission_denied">permission denied!</string>
+
+    <!--global init failed notification-->
+    <string name="init_failed">init failed,code is %d</string>
+    <string name="engine_not_initialized">engine not initialized! code is %d</string>
+
+    <!--single/dual camera register&recognize page-->
+    <string name="register">register</string>
+    <string name="switch_camera">switch camera</string>
+    <string name="switch_camera_failed">switch camera failed</string>
+    <string name="notice_change_detect_degree">camera switched, if no face detected, please change face detect degree in homepage</string>
+    <string name="recognize_failed_notice">DENIED:%s</string>
+    <string name="recognize_success_notice">PASS:%s</string>
+    <string name="low_confidence_level">face low confidence level</string>
+    <string name="specific_engine_init_failed">%s init failed, code is:%d</string>
+    <string name="liveness_detect">liveness detect</string>
+    <string name="camera_rgb">RGB CAMERA</string>
+    <string name="camera_ir">IR CAMERA</string>
+    <string name="camera_rgb_preview_size">RGB CAMERA\n%dx%d</string>
+    <string name="camera_ir_preview_size">IR CAMERA\n%dx%d</string>
+    <string name="camera_error_notice">\npossible reason:open two cameras at the same time is not allowed on this device</string>
+    <string name="draw_ir_rect_mirror_horizontal">draw IR face rect mirror horizontal</string>
+    <string name="draw_ir_rect_mirror_vertical">draw IR face rect mirror vertical</string>
+
+    <!--batch process dialog-->
+    <string name="progress_dialog_batch_register">progress: %d / %d</string>
+    <string name="progress_dialog_registering_please_wait">registering,please wait</string>
+
+    <!--batch process-->
+    <string name="ok">OK</string>
+    <string name="cancel">Cancel</string>
+    <string name="batch_process_notification_register">please put the images that need to register into directory \nsdcard/arcfacedemo/register</string>
+    <string name="batch_process_no_face_need_to_delete">no face need to delete</string>
+    <string name="batch_process_confirm_delete">delete those %d images and face features?</string>
+    <string name="batch_process_batch_register">batch register</string>
+    <string name="batch_process_notification">notification</string>
+    <string name="batch_process_clear_faces">clear faces</string>
+    <string name="batch_process_path_is_not_exists">path \n%s\n is not exists</string>
+    <string name="batch_process_path_is_not_dir">path \n%s\n is not a directory</string>
+    <string name="batch_process_processing_please_wait">process start,please wait</string>
+    <string name="batch_process_finished_info">process finished!\ntotal count =  %d \nsuccess count = %d \nfailed count = %d \nfailed images are in directory \' %s \'</string>
+
+
+    <string name="text_room">Rooms</string>
+    <string name="text_guest">Guests</string>
+    <string name="text_child">Children</string>
+    <string name="default_zero_num" translatable="false">0</string>
+    <string name="default_now_date">Mar. 2th</string>
+    <string name="text_yearWithMonth">%d.%d</string>
+    <string name="text_specialDiscount">Preferential Room</string>
+    <string name="text_usingIntegral">Use Integral Consumption</string>
+    <string name="text_more_choice">More Options</string>
+    <string name="text_searchHotel">Search Hotel</string>
+    <string name="text_enter">Enter</string>
+    <string name="text_hintForInputAccount">Account Number.</string>
+    <string name="text_areadyHaveAccount">Already have an account?</string>
+    <string name="text_hint_correctAccountAndPw">Please check your password and account.</string>
+    <string name="text_repeatPassword">Repeat Password</string>
+    <string name="text_nickName">Nickname</string>
+    <string name="text_loading">Loading…</string>
+    <string name="text_wrongPassword">Incorrect username or password, please try again.</string>
+    <string name="text_loginSuccess">Login Success</string>
+    <string name="text_networkError">Network connection error</string>
+    <string name="text_regSuccess">Successful Registration</string>
+    <string name="text_regFail">Registration Failed</string>
+    <string name="text_avatar">Avatar</string>
+    <string name="tip_completeIdentity">Complete your Identity information</string>
+    <string name="text_username">Username</string>
+    <string name="text_realName">Real Name</string>
+    <string name="text_gender">Gender</string>
+    <string name="text_id">ID</string>
+    <string name="text_motto">Motto</string>
+    <string name="text_phone">Phone</string>
+    <string name="text_wechat">Wechat</string>
+    <string name="text_contact">Contact information</string>
+    <string name="text_email">Email</string>
+    <string name="text_birthday">Birthday</string>
+    <string name="text_menu">Menu</string>
+    <string name="text_msg">Message</string>
+    <string name="text_arrowDown">down arrow</string>
+    <string name="text_quickShortcut">Quick Access</string>
+    <string name="text_defaultLocation">Hangzhou</string>
+    <string name="text_hotels">Hotels</string>
+    <string name="text_add_to_fav">Add to Favourites</string>
+    <string name="text_select">Selections</string>
+
+    <string name="title_activity_hotel">HotelActivity</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label" translatable="false">First Fragment</string>
+    <string name="second_fragment_label" translatable="false">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <string name="hello_first_fragment" translatable="false">Hello first fragment</string>
+    <string name="hello_second_fragment" translatable="false">Hello second fragment. Arg: %1$s</string>
+    <string name="title_my_tool">My Toolbox</string>
+    <string name="title_checkMoreTools">Learn More</string>
+    <string name="title_travelGrowth">My Experience</string>
+
+    <string name="text_myFav">My Favourite</string>
+    <string name="text_browserHistory">Browse History</string>
+    <string name="text_journeyList">Journey List</string>
+    <string name="text_vouchers">Vouchers</string>
+    <string name="text_default_profile_num" translatable="false">0</string>
+    <string name="text_default_profile_identity" translatable="false">Member</string>
+
+
+    <!--    toolBox-->
+    <string name="text_personalInfo">Personal Info</string>
+    <string name="text_qrcode">QR Code</string>
+    <string name="text_faceIdentify">Face Identify</string>
+    <string name="text_ARTourGuide">AR TourGuide</string>
+    <string name="text_memberPrivCode">Member Privilege</string>
+    <string name="text_feedback">Feedback</string>
+    <string name="text_journeyMenu">Journey Menu</string>
+    <string name="text_arExperimental">AR Lab</string>
+
+    <string name="text_allOrders">All Orders</string>
+    <string name="text_pending">Pending</string>
+    <string name="text_tourPlan">Tour Plan</string>
+    <string name="text_toBeCommented">To Comment</string>
+
+    <string name="tag_cost_effective">Cost-effective</string>
+    <string name="symbol_money">$</string>
+    <string name="title_recommendHotel">Recommended for you</string>
+    <string name="text_menu_search">Search Hotel</string>
+    <string name="action_setting">Settings</string>
+    <string name="text_priceFormat">"USD AVE/ NIGHT "</string>
+    <string name="text_checkPrice">CHECK IN</string>
+    <string name="text_default_location" translatable="false">No.1366, Rd. Qianjiang</string>
+    <string name="text_default_city" translatable="false">Hangzhou, 310012</string>
+    <string name="text_default_distance" translatable="false">1.3 km</string>
+    <string name="text_price_low_to_high">Price range from low to high</string>
+    <string name="text_price_high_to_low">Price range from high to low</string>
+
+    <string name="text_popularity_low_to_high">Popularity range from low to high</string>
+    <string name="text_popularity_high_to_low">Popularity range from high to low</string>
+    <string name="text_findSuitableHotel">To Find Your Suitable Hotel</string>
+
+    <string name="text_hotelDetail">Concerning the Hotel</string>
+    <string name="text_checkInDate">Check In Date</string>
+    <string name="text_checkOutDate">Check Out Date</string>
+    <string name="text_standard_checkInTime" translatable="false">03:00 PM</string>
+    <string name="text_standard_checkOutTime" translatable="false">12:00 PM</string>
+    <string name="text_default_rating_stars">4.5</string>
+    <string name="text_local_weather">Weather</string>
+    <string name="text_default_weather">Sunny</string>
+    <string name="text_default_temperature" translatable="false">14℃</string>
+    <string name="text_local_temperature">Temperature</string>
+    <string name="text_default_hotelIntro">At The Grand Hyatt Hangzhou, you can indulge in the luxurious Jiangnan-style living environment, enjoy the beautiful Qiantang River views, and explore the vibrant Qianjiang New City. From unique dining and artistic design sits to stunning event spaces and the constant pursuit of service, The Park Hyatt Hangzhou offers a luxurious experience every time.</string>
+    <string name="sp_swimpool">Swimming pool</string>
+    <string name="sp_room_service">Room service</string>
+    <string name="sp_hotel_restaurant">Hotel Restaurant</string>
+    <string name="sp_free_wifi">Free wifi</string>
+    <string name="sp_vip">Concierge services</string>
+    <string name="sp_gym">Gym</string>
+    <string name="text_sp_equip">Featured facilities</string>
+    <string name="text_pics">Picture</string>
+    <string name="hint_learnAll">Learn All</string>
+    <string name="sp_dining_options">Dining options</string>
+    <string name="sp_roomType">Room type</string>
+    <string name="roomtype_room">Room</string>
+    <string name="roomtype_suite">Suite</string>
+    <string name="action_bookNow">Book now</string>
+    <string name="unit_cnyPerNight">CNY AVE / Night</string>
+    <string name="unit_default_cnPrice">CN￥1,170</string>
+    <string name="sp_nearby">"Nearby attractions "</string>
+    <string name="sp_att_scenic">Scenic spots</string>
+    <string name="sp_att_relics">Relics</string>
+    <string name="sp_att_museum">Museums</string>
+    <string name="text_default_bookTime">Mar.22th - Mar.23th</string>
+    <string name="text_publicTraffic">Parking and transportation</string>
+    <string name="search_hotSpot">Hot Spot</string>
+    <string name="search_history">Search History</string>
+    <string name="title_activity_search" translatable="false">SearchActivity</string>
+    <string name="title_registeredFaceInfo">Registered Face Info</string>
+    <string name="title_registeredTime">Registered Data:%s</string>
+    <string name="title_addFace">Add New</string>
+    <string name="title_learnSecurePolicy">Confidentiality policy</string>
+
+    <!--    浙江城市-->
+    <string name="city_hangzhou">Hangzhou</string>
+    <string name="city_huzhou">Huzhou</string>
+    <string name="tip_beforeBooking">Taking into account the recent development of the coronavirus disease epidemic, for safety reasons, the opening hours and service content of some restaurants, bars and leisure and entertainment facilities in hotels will be affected from now on      And jump. For details or inquiries, please call the hotel directly to confirm</string>
+    <string name="tip_enableScaningFace">Click the button to turn on face recognition mode.</string>
+    <string name="text_unverifiedID">You haven\'t checked your identity</string>
+    <string name="text_preferTradtion">I still prefer the traditional way.</string>
+    <string name="text_recommend">Recommended</string>
+    <string name="text_chooseDateRange">Pick Range</string>
+    <string name="text_confirm">Confirm</string>
+
+    <!--    订单-->
+
+    <string name="text_order">Orders</string>
+    <string name="text_payingOrders">Paying</string>
+    <string name="text_paidOrders">Paid</string>
+    <string name="text_pendingOrders">Pending</string>
+    <string name="text_order_status">Order Status</string>
+    <string name="text_orderTitle">orderTitle</string>
+    <string name="text_orderNo">orderNo</string>
+    <string name="text_orderValue">Order Value</string>
+    <string name="text_order_sum">Total %i </string>
+    <string name="text_order_detail">Order Detail</string>
+    <string name="text_order_price">Order Price</string>
+    <string name="zh_year">年</string>
+    <string name="zh_month">月</string>
+    <string name="zh_day">日</string>
+    <string name="text_month_day">%d. %d</string>
+    <string name="text_exploreHotel">Explore hotels and resorts</string>
+    <string name="text_exploreScene">Explore scenic spots</string>
+    <string name="text_theme">Theme</string>
+    <string name="text_offers">Offers%d</string>
+    <string name="text_topRecommend">Top Recommendations</string>
+
+    <string name="week_mon">Monday</string>
+    <string name="week_tue">Tuesday</string>
+    <string name="week_wed">Wednesday</string>
+    <string name="week_thur">Thursday</string>
+    <string name="week_fri">Friday</string>
+    <string name="week_sat">Saturday</string>
+    <string name="week_sun">Sunday</string>
+    <string name="text_selected">Selected</string>
+    <string name="expiredId">Your identity has expired, please log back in</string>
+    <string name="text_expiredIdTitle">Expired</string>
+
+    <string name="text_hintForModifyUsername">Please enter the username you want to modify</string>
+    <string name="text_modifyUsername">Modify Username</string>
+    <string name="text_save">Save</string>
+    <string name="text_hintForOffendingUsername">There can be no offending words in the username</string>
+    <string name="kt_yearWithMonth">$year $month</string>
+
+
+</resources>

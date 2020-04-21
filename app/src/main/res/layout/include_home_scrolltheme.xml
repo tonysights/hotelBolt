@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.qmuiteam.qmui.layout.QMUILinearLayout
+        android:layout_width="132dp"
+        android:layout_height="170dp"
+        android:layout_marginEnd="18dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:foreground="?attr/selectableItemBackgroundBorderless"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+
+        <com.qmuiteam.qmui.widget.QMUIRadiusImageView
+            android:layout_width="132dp"
+            android:layout_height="100dp"
+            android:src="@drawable/city_eve"
+            app:qmui_corner_radius="10dp" />
+
+        <TextView
+            style="@style/home_subtitle_textview"
+            android:text="@string/text_exploreHotel" />
+    </com.qmuiteam.qmui.layout.QMUILinearLayout>
+
+    <com.qmuiteam.qmui.layout.QMUILinearLayout
+        android:layout_width="132dp"
+        android:layout_height="170dp"
+        android:layout_marginEnd="18dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:foreground="?attr/selectableItemBackgroundBorderless"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+
+        <com.qmuiteam.qmui.widget.QMUIRadiusImageView
+            android:layout_width="132dp"
+            android:layout_height="100dp"
+            android:src="@drawable/city_eve"
+            app:qmui_corner_radius="10dp" />
+
+        <TextView
+            style="@style/home_subtitle_textview"
+            android:text="@string/text_exploreHotel" />
+
+
+    </com.qmuiteam.qmui.layout.QMUILinearLayout>
+
+    <com.qmuiteam.qmui.layout.QMUILinearLayout
+        android:layout_width="132dp"
+        android:layout_height="170dp"
+        android:layout_marginEnd="18dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:foreground="?attr/selectableItemBackgroundBorderless"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+
+        <com.qmuiteam.qmui.widget.QMUIRadiusImageView
+            android:layout_width="132dp"
+            android:layout_height="100dp"
+            android:src="@drawable/city_eve"
+            app:qmui_corner_radius="10dp" />
+
+        <TextView
+            style="@style/home_subtitle_textview"
+            android:text="@string/text_exploreHotel" />
+
+
+    </com.qmuiteam.qmui.layout.QMUILinearLayout>
+
+    <com.qmuiteam.qmui.layout.QMUILinearLayout
+        android:layout_width="132dp"
+        android:layout_height="170dp"
+        android:layout_marginEnd="18dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:foreground="?attr/selectableItemBackgroundBorderless"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+
+        <com.qmuiteam.qmui.widget.QMUIRadiusImageView
+            android:layout_width="132dp"
+            android:layout_height="100dp"
+            android:src="@drawable/city_eve"
+            app:qmui_corner_radius="10dp" />
+
+        <TextView
+            style="@style/home_subtitle_textview"
+            android:text="@string/text_exploreHotel" />
+
+
+    </com.qmuiteam.qmui.layout.QMUILinearLayout>
+
+    <com.qmuiteam.qmui.layout.QMUILinearLayout
+        android:layout_width="132dp"
+        android:layout_height="170dp"
+        android:layout_marginEnd="18dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:foreground="?attr/selectableItemBackgroundBorderless"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+
+        <com.qmuiteam.qmui.widget.QMUIRadiusImageView
+            android:layout_width="132dp"
+            android:layout_height="100dp"
+            android:src="@drawable/city_eve"
+            app:qmui_corner_radius="10dp" />
+
+        <TextView
+            style="@style/home_subtitle_textview"
+            android:text="@string/text_exploreHotel" />
+
+
+    </com.qmuiteam.qmui.layout.QMUILinearLayout>
+
+</LinearLayout>

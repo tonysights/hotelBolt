@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.qmuiteam.qmui.layout.QMUIConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/hotelDesContainer"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginVertical="5dp"
+    android:background="@color/qmui_config_color_50_white">
+
+    <RatingBar
+        android:id="@+id/ratingBar"
+        style="@style/Widget.AppCompat.RatingBar.Small"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@+id/divider8"
+        app:layout_constraintStart_toStartOf="@+id/hotelName_tv"
+        app:layout_constraintTop_toBottomOf="@+id/hotelRank_tv"
+        app:layout_constraintVertical_bias="0.050000012" />
+
+    <TextView
+        android:id="@+id/hotelName_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:drawableStart="@drawable/ic_home"
+        android:fontFamily="@font/yashihei"
+        android:text="@string/text_hotels"
+        android:textSize="23sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.07"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/hotelRank_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="monospace"
+        android:text="@string/text_default_rating_stars"
+        android:textStyle="italic"
+        app:layout_constraintBottom_toTopOf="@+id/divider8"
+        app:layout_constraintEnd_toEndOf="@+id/hotelName_tv"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/hotelName_tv"
+        app:layout_constraintTop_toBottomOf="@+id/hotelName_tv"
+        app:layout_constraintVertical_bias="0.050000012" />
+
+    <ImageButton
+        android:id="@+id/hotel_logo"
+        android:layout_width="77dp"
+        android:layout_height="70dp"
+        android:scaleType="centerCrop"
+        android:src="@mipmap/logo_bolt"
+        app:layout_constraintBottom_toBottomOf="@+id/hotelName_tv"
+        app:layout_constraintEnd_toEndOf="parent"
+
+        app:layout_constraintHorizontal_bias="0.922"
+        app:layout_constraintStart_toEndOf="@+id/hotelName_tv"
+        app:layout_constraintTop_toTopOf="@+id/hotelName_tv"
+        app:layout_constraintVertical_bias="0.2" />
+
+    <TextView
+        android:id="@+id/commentsNum_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="45"
+        android:textColor="@color/app_color_theme_10"
+        app:layout_constraintBottom_toBottomOf="@+id/ratingBar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.03"
+        app:layout_constraintStart_toEndOf="@+id/ratingBar"
+        app:layout_constraintTop_toTopOf="@+id/ratingBar" />
+
+    <com.qmuiteam.qmui.layout.QMUILinearLayout
+        android:id="@+id/QMUILinearLayout2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:orientation="vertical"
+        android:paddingTop="10dp"
+        android:paddingEnd="10dp"
+
+        android:paddingBottom="10dp"
+
+        app:layout_constraintStart_toStartOf="@+id/hotelName_tv"
+        app:layout_constraintTop_toBottomOf="@+id/ratingBar">
+
+        <TextView
+            android:id="@+id/location_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="serif-monospace"
+            android:text="@string/text_default_location"
+            android:textSize="14sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/city_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="3dp"
+            android:fontFamily="serif-monospace"
+            android:text="@string/text_default_city"
+            android:textSize="14sp"
+            android:textStyle="bold" />
+
+
+    </com.qmuiteam.qmui.layout.QMUILinearLayout>
+
+    <TextView
+        android:id="@+id/contact_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="monospace"
+        android:text="15669011227"
+        app:layout_constraintBottom_toTopOf="@+id/divider8"
+        app:layout_constraintStart_toStartOf="@+id/hotelName_tv"
+        app:layout_constraintTop_toBottomOf="@+id/QMUILinearLayout2"
+        app:layout_constraintVertical_bias="0.050000012" />
+
+    <com.qmuiteam.qmui.layout.QMUILinearLayout
+        android:id="@+id/QMUILinearLayout4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/qmui_config_color_50_white"
+        android:orientation="horizontal"
+        android:paddingTop="10dp"
+        android:paddingEnd="10dp"
+        android:paddingBottom="10dp"
+        app:layout_constraintBottom_toBottomOf="@+id/QMUILinearLayout2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/QMUILinearLayout2"
+        app:layout_constraintTop_toBottomOf="@+id/commentsNum_tv"
+        app:layout_constraintVertical_bias="0.22000003">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="15dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-condensed-medium"
+                android:text="@string/text_local_weather"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="3dp"
+                android:drawableLeft="@drawable/ic_wb_sunny_orange_24dp"
+                android:fontFamily="monospace"
+                android:gravity="center_vertical"
+                android:text="@string/text_default_weather" />
+        </LinearLayout>
+
+        <View
+            android:id="@+id/divider6"
+            android:layout_width="1dp"
+            android:layout_height="30dp"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1"
+            android:background="?android:attr/listDivider" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="15dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-condensed-medium"
+                android:text="@string/text_local_temperature"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="3dp"
+                android:fontFamily="monospace"
+                android:text="@string/text_default_temperature"
+                android:textColor="@color/app_color_theme_10"
+                android:textStyle="bold" />
+        </LinearLayout>
+    </com.qmuiteam.qmui.layout.QMUILinearLayout>
+
+
+</com.qmuiteam.qmui.layout.QMUIConstraintLayout>
