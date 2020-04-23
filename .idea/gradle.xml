@@ -10,6 +10,7 @@
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/animview" />
             <option value="$PROJECT_DIR$/app" />
             <option value="$PROJECT_DIR$/calendarstyle" />
             <option value="$PROJECT_DIR$/foldtextview" />

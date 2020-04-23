@@ -35,7 +35,7 @@ class HotelCommentTabFragment :
             (recyclerView.adapter as CommentListAdapter).submitList(it)
         })
 
-        ratingBar.setOnRatingBarChangeListener { ratingBar: RatingBar, fl: Float, b: Boolean ->
+        ratingBar.setOnRatingBarChangeListener { _: RatingBar, fl: Float, _: Boolean ->
             viewModel.userPraiseFlLive.value = fl
         }
 
