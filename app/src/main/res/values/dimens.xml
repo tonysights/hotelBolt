@@ -35,4 +35,20 @@
     <dimen name="login_page_textSize">30sp</dimen>
     <dimen name="fab_margin">16dp</dimen>
 
+
+    <dimen name="textsize_small">12sp</dimen>
+    <dimen name="textsize_content">14sp</dimen>
+    <dimen name="textsize_titlesmall">16sp</dimen>
+    <dimen name="textsize_title">17sp</dimen>
+    <dimen name="textsize_titlelarge">19sp</dimen>
+    <dimen name="textsize_titlebar">20sp</dimen>
+
+    <dimen name="dimenTextMin">10sp</dimen>
+    <dimen name="dimenTextSmall">12sp</dimen>
+    <dimen name="dimenTextContent">14sp</dimen>
+    <dimen name="dimenTextTitleSmall">16sp</dimen>
+    <dimen name="dimenTextTitle">17sp</dimen>
+    <dimen name="dimenTextTitleLarge">19sp</dimen>
+    <dimen name="dimenTextTitleBar">20sp</dimen>
+    <dimen name="dimenTextEditText">14sp</dimen>
 </resources>

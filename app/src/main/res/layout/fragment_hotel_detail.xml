@@ -38,15 +38,15 @@
                 <com.youth.banner.Banner
                     android:id="@+id/bannerTop"
                     android:layout_width="match_parent"
-                    app:indicator_gravity="center"
-                    android:layout_height="270dp">
+                    android:layout_height="270dp"
+                    app:indicator_gravity="center">
 
                     <androidx.constraintlayout.widget.ConstraintLayout
                         android:layout_width="match_parent"
                         android:layout_height="match_parent">
 
                         <com.qmuiteam.qmui.widget.QMUIRadiusImageView
-                            android:id="@+id/alpha_btn1"
+                            android:id="@+id/alpha_btn1_back"
                             android:layout_width="30dp"
                             android:layout_height="30dp"
                             android:scaleType="centerCrop"
@@ -66,11 +66,11 @@
                             android:layout_width="30dp"
                             android:layout_height="30dp"
                             android:src="@drawable/ic_share_trans_gray_24dp"
-                            app:layout_constraintBottom_toBottomOf="@+id/alpha_btn1"
+                            app:layout_constraintBottom_toBottomOf="@+id/alpha_btn1_back"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintHorizontal_bias="0.93"
-                            app:layout_constraintStart_toEndOf="@+id/alpha_btn1"
-                            app:layout_constraintTop_toTopOf="@+id/alpha_btn1"
+                            app:layout_constraintStart_toEndOf="@+id/alpha_btn1_back"
+                            app:layout_constraintTop_toTopOf="@+id/alpha_btn1_back"
                             app:qmui_border_width="0.2dp"
                             app:qmui_corner_radius="20dp" />
 
@@ -91,10 +91,11 @@
                 android:id="@+id/toolbar"
                 android:layout_width="match_parent"
                 android:layout_height="70dp"
+                android:layout_marginTop="20dp"
                 android:fitsSystemWindows="true"
                 android:paddingTop="20dp"
-                android:layout_marginTop="20dp"
                 app:layout_collapseMode="pin">
+
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:id="@+id/toolbarDetail"
                     android:layout_width="match_parent"
@@ -103,6 +104,7 @@
                     android:orientation="horizontal">
 
                     <com.qmuiteam.qmui.alpha.QMUIAlphaImageButton
+                        android:id="@+id/back_btn2"
                         android:layout_width="30dp"
                         android:layout_height="30dp"
                         android:scaleType="centerCrop"
@@ -146,6 +148,7 @@
         </com.google.android.material.appbar.CollapsingToolbarLayout>
 
         <com.google.android.material.tabs.TabLayout
+            android:id="@+id/tabLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:tabIndicatorColor="@color/app_color_theme_11">
@@ -165,45 +168,11 @@
 
     </com.google.android.material.appbar.AppBarLayout>
 
-    <androidx.core.widget.NestedScrollView
-        android:id="@+id/nestedScrollView2"
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/viewPager2"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/qmui_config_color_75_white"
-        android:fillViewport="true"
-        app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-
-            <include
-                android:id="@+id/intro"
-                layout="@layout/include_hotel_info"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
-                android:layout_marginEnd="10dp" />
-
-            <include
-                android:id="@+id/spec"
-                layout="@layout/include_hotel_special"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
-                android:layout_marginEnd="10dp" />
-
-            <include
-                android:id="@+id/add"
-                layout="@layout/include_hotel_additional"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
-                android:layout_marginEnd="10dp" />
-        </LinearLayout>
-    </androidx.core.widget.NestedScrollView>
-
+        android:layout_height="match_parent"
+        app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior" />
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cardview"
@@ -218,6 +187,7 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:background="@color/default_BookPage_backgroundColor"
             android:elevation="5dp"
             android:translationZ="3dp">
 

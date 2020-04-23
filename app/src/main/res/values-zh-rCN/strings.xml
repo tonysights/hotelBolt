@@ -269,4 +269,12 @@
     <string name="text_checkInDate">入住日期</string>
     <string name="text_checkOutDate">退房日期</string>
     <string name="text_hotelDetail">酒店详细信息</string>
+    <string name="text_introduce">介绍</string>
+    <string name="text_comment">评论</string>
+    <string name="text_theLatest">最新</string>
+    <string name="text_theHotest">最热</string>
+    <string name="text_theBest">最赞</string>
+    <string name="hint_clickToAppraise">点击添加您的评论</string>
+    <string name="text_soso">一般</string>
+    <string name="hint_addComments">添加评论</string>
 </resources>

@@ -1,5 +1,7 @@
 package xyz.tspace.hotelbolt.base
 
+import androidx.recyclerview.widget.ListAdapter
+import androidx.recyclerview.widget.RecyclerView
 import retrofit2.Call
 import retrofit2.Callback
 

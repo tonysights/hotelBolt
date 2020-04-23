@@ -6,7 +6,10 @@ import retrofit2.converter.gson.GsonConverterFactory
 class HttpToolBox {
     companion object {
 
+
         private const val baseUrl = "http://120.26.235.201:8799/"
+
+        //图片资源API
         private const val pixabayUrl = "https://pixabay.com/"
 
         val client: Retrofit by lazy {

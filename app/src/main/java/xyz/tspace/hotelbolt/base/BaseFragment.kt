@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.NavDirections
 import androidx.navigation.findNavController
 import com.qmuiteam.qmui.util.QMUIDisplayHelper
 import com.qmuiteam.qmui.util.QMUIStatusBarHelper
@@ -53,6 +54,10 @@ abstract class BaseFragment<VM : BaseViewModel>(contentLayoutId: Int, viewModelC
 
     fun navigateTo(actionId: Int, args: Bundle) {
         navController?.navigate(actionId, args)
+    }
+
+    fun navigateTo(navDirections: NavDirections) {
+        navController?.navigate(navDirections)
     }
 
     fun popBack() {

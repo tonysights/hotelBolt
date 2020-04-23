@@ -17,11 +17,11 @@ class HotelListFragment :
     override fun initView() {
         setupHotelList()
 
-
     }
 
     override fun initListener() {
         toolbar.setNavigationOnClickListener { popBack() }
+
     }
 
     override fun initObserver() {

@@ -45,4 +45,14 @@
         <item>@string/week_sat</item>
         <item>@string/week_sun</item>
     </string-array>
+
+    <string-array name="tabTitle_hotelDetail">
+        <item>@string/text_introduce</item>
+        <item>@string/text_comment</item>
+    </string-array>
+
+    <string-array name="tabTitle_modifyComment">
+        <item>@string/text_comment</item>
+        <item>@string/text_pics</item>
+    </string-array>
 </resources>
