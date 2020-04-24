@@ -1,6 +1,6 @@
 package xyz.tspace.hotelbolt.base
 
-data class WaterFallCell(
+data class ViewCellBean(
     val title: String,
     val subTitle: String?
 ) {

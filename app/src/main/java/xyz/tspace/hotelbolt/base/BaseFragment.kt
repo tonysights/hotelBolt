@@ -6,12 +6,12 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.ViewModelProvider
+import androidx.fragment.app.activityViewModels
 import androidx.navigation.NavDirections
 import androidx.navigation.findNavController
 import com.qmuiteam.qmui.util.QMUIDisplayHelper
 import com.qmuiteam.qmui.util.QMUIStatusBarHelper
-import kotlin.reflect.KClass
+import xyz.tspace.hotelbolt.viewmodel.MainViewModel
 
 /**
  * 封装Fragment的基本使用
@@ -26,14 +26,15 @@ import kotlin.reflect.KClass
  * @author WRJ
  * 2020-3-23
  */
-abstract class BaseFragment<VM : BaseViewModel>(contentLayoutId: Int, viewModelClazz: KClass<VM>) :
+abstract class BaseFragment(
+    val contentLayoutId: Int,
+    private val isStatusBarDarkMode: Boolean? = null
+) :
     Fragment(contentLayoutId) {
 
-    val viewModel by lazy { ViewModelProvider(requireActivity()).get(viewModelClazz.java) }
+    val mainViewModel by activityViewModels<MainViewModel>()
 
     val TAG = this.javaClass.name
-
-    val layoutResId = contentLayoutId
 
     private val navController by lazy { view?.findNavController() }
 
@@ -41,43 +42,52 @@ abstract class BaseFragment<VM : BaseViewModel>(contentLayoutId: Int, viewModelC
 
     val layoutParent get() = view?.rootView as ViewGroup
 
+
     fun getColor(resId: Int) = ContextCompat.getColor(requireContext(), resId)
+
 
     fun getInteger(resId: Int) = resources.getInteger(resId)
 
-    fun getStringArray(resId: Int) = resources.getStringArray(resId)
+
+    fun getStringArray(resId: Int): Array<String> = resources.getStringArray(resId)
+
+
+    fun dp2px(dp: Int) = QMUIDisplayHelper.dp2px(requireContext(), dp)
 
 
     fun navigateTo(actionId: Int) {
         navController?.navigate(actionId)
     }
 
+
     fun navigateTo(actionId: Int, args: Bundle) {
         navController?.navigate(actionId, args)
     }
 
+
     fun navigateTo(navDirections: NavDirections) {
         navController?.navigate(navDirections)
     }
+
 
     fun popBack() {
         navController?.popBackStack()
     }
 
 
-    abstract fun setStatusDarkMode(): Boolean?
-
     //初始化视图
     abstract fun initView()
+
 
     //初始化监听器
     abstract fun initListener()
 
+
     //初始化观察器
     abstract fun initObserver()
 
-    fun dp2px(dp: Int) = QMUIDisplayHelper.dp2px(requireContext(), dp)
 
+    // onCreateView不可再被重写
     final override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -85,24 +95,28 @@ abstract class BaseFragment<VM : BaseViewModel>(contentLayoutId: Int, viewModelC
     ): View? {
         //配置状态栏透明和字体颜色
         QMUIStatusBarHelper.translucent(requireActivity())
-        requireActivity().apply {
-            QMUIStatusBarHelper.translucent(this)
-            val temp = setStatusDarkMode()
-            if (temp != null) {
-                if (temp)
-                    QMUIStatusBarHelper.setStatusBarDarkMode(this)
-                else QMUIStatusBarHelper.setStatusBarLightMode(this)
-            }
-        }
         return super.onCreateView(inflater, container, savedInstanceState)
     }
 
+
+    // onActivityCreated不可再被重写,使用init*方法代替
     final override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         initView()
         initListener()
         initObserver()
     }
+
+
+    override fun onResume() {
+        super.onResume()
+        isStatusBarDarkMode?.let {
+            if (isStatusBarDarkMode)
+                QMUIStatusBarHelper.setStatusBarDarkMode(requireActivity())
+            else QMUIStatusBarHelper.setStatusBarLightMode(requireActivity())
+        }
+    }
+
 
 }
 

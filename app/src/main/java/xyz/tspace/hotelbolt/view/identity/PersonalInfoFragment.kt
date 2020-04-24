@@ -10,11 +10,10 @@ import kotlinx.android.synthetic.main.fragment_personal_info.*
 import xyz.tspace.hotelbolt.R
 import xyz.tspace.hotelbolt.base.BaseFragment
 import xyz.tspace.hotelbolt.model.User
-import xyz.tspace.hotelbolt.viewmodel.MainViewModel
 
 class PersonalInfoFragment :
-    BaseFragment<MainViewModel>(R.layout.fragment_personal_info, MainViewModel::class) {
-    override fun setStatusDarkMode(): Boolean? = false
+    BaseFragment(R.layout.fragment_personal_info, false) {
+
     private var loadedUser: User? = null
 
     //对列表项使用懒加载
@@ -45,10 +44,12 @@ class PersonalInfoFragment :
     //微信项
     private val wechatItem by lazy { groupListView.createItemView(getString(R.string.text_wechat)) }
 
+
     override fun initView() {
-        viewModel.fetchUserInfo()
+        mainViewModel.fetchUserInfo()
         setupGroupList()
     }
+
 
     override fun initListener() {
         toolbar.setNavigationOnClickListener { popBack() }
@@ -62,12 +63,11 @@ class PersonalInfoFragment :
         })
         //跳转到设置用户名
         nicknameItem.setOnClickListener { navigateTo(R.id.action_personalInfoFragment_to_setInfoFragment) }
-
-
     }
 
+
     override fun initObserver() {
-        viewModel.userLive.observe(requireActivity(), Observer {
+        mainViewModel.userLive.observe(requireActivity(), Observer {
             loadedUser = it
             pull_to_refresh.setToRefreshDirectly(1000)
         })

@@ -42,7 +42,7 @@ class MainViewModel(application: Application) : BaseViewModel(application) {
 
     private val _tokenLive = MutableLiveData<Token>(initToken)
         get() {
-            //分别尝试从此liveData, application和sharedPreference中获取有效token，直至最后才返回null,然后提示用户需要重新登陆
+            //分别尝试从此liveData, application和sharedPreference中获取有效token，直至最后返回null,然后提示用户需要重新登陆
             val temp1 = field.value
             val temp2 by lazy { getApplication<MyApp>().currentToken }
             val temp3: Token by lazy {
@@ -51,19 +51,20 @@ class MainViewModel(application: Application) : BaseViewModel(application) {
                 Token(temp3Str, Date(temp3TIme))
             }
             //每次使用token发送请求前，都会在token提供方（此liveData）和接受方（observer）进行双重校验
-            return field.also {
-                it.postValue(
-                    when {
-                        verifyToken(temp1) -> field.value
-                        verifyToken(temp2) -> temp2
-                        verifyToken(temp3) -> temp3
-                        else -> expiredToken
-                    }
-                )
+            field.value = when {
+                verifyToken(temp1) -> field.value
+                verifyToken(temp2) -> temp2
+                verifyToken(temp3) -> temp3
+                else -> expiredToken
             }
+
+            return field
         }
     val tokenLive: LiveData<Token> get() = _tokenLive
 
+    init {
+
+    }
 
     //预定界面日期选择器数据
     var rangeCalendarSaves: MutableLiveData<Array<Calendar>> = MutableLiveData()
@@ -73,21 +74,7 @@ class MainViewModel(application: Application) : BaseViewModel(application) {
     private val _homeBannerLiveLive = MutableLiveData(DataProvider.getPreviewImgList())
     val homeBannerLiveData: LiveData<List<PixabayImage>> get() = _homeBannerLiveLive
 
-    //实时各酒店信息
-    private val _hotelListLive = MutableLiveData<List<Hotel>>()
-    val hotelListLive: LiveData<List<Hotel>> get() = _hotelListLive
 
-    //实时所选酒店各房间信息
-    private val _hotelRoomLive =
-        MutableLiveData<List<HotelRoom>>(DataProvider.getInitHotelRoomList())
-    val hotelRoomLive: LiveData<List<HotelRoom>> get() = _hotelRoomLive
-
-    //房间评论信息
-    private val _roomCommentsLive = MutableLiveData<List<Appraise>>(listOf<Appraise>())
-    val roomCommentsLive: LiveData<List<Appraise>> get() = _roomCommentsLive
-
-    //
-    val userPraiseFlLive = MutableLiveData<Float>(0F)
 
 
     //抓取轮播图数据
@@ -136,67 +123,9 @@ class MainViewModel(application: Application) : BaseViewModel(application) {
         }
     }
 
-    //获取酒店信息
-    fun fetchAllHotelInfo() {
-        val token = _tokenLive.value
-        if (token != null && token.isValid) {
-            HotelService.searchHotel(token, SearchRoom(0), object : ResponseList<Hotel> {
-                override fun onFailure(call: Call<BaseBean<List<Hotel>>>, t: Throwable) {
-
-                }
-
-                override fun onResponse(
-                    call: Call<BaseBean<List<Hotel>>>,
-                    response: Response<BaseBean<List<Hotel>>>
-                ) {
-                    response.body()?.data.let { _hotelListLive.postValue(it) }
-                }
-
-            })
-        }
-    }
-
-    fun fetchHotelRoomInfo(hotelId: String) {
-        val token = _tokenLive.value
-        if (token != null && token.isValid)
-        //TODO: 将hotelId参数修改为页面实际选择的酒店的hotelId
-            HotelService.searchRoomByHotelId(
-                token, "1", object : ResponseList<HotelRoom> {
-                    override fun onFailure(call: Call<BaseBean<List<HotelRoom>>>, t: Throwable) {
-                        println(t.cause)
-                    }
-
-                    override fun onResponse(
-                        call: Call<BaseBean<List<HotelRoom>>>,
-                        response: Response<BaseBean<List<HotelRoom>>>
-                    ) {
-                        response.body()?.data?.let { _hotelRoomLive.postValue(it) }
-                    }
-
-                })
-
-    }
-
-    fun fetchRoomComment(roomTypeId: String) {
-        val token = _tokenLive.value
-        if (token != null && token.isValid)
-        //todo: hotelId这个参数需要修正
-            HotelService.findAllComments(token, "1", object : ResponseList<Appraise> {
-                override fun onFailure(call: Call<BaseBean<List<Appraise>>>, t: Throwable) {
-                    println(t.cause.toString())
-                }
-
-                override fun onResponse(
-                    call: Call<BaseBean<List<Appraise>>>,
-                    response: Response<BaseBean<List<Appraise>>>
-                ) {
-                    response.body()?.data?.let { _roomCommentsLive.postValue(it) }
-
-                }
-            })
 
 
-    }
+
 
 
 }

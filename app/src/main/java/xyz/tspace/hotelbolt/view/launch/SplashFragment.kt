@@ -2,6 +2,7 @@ package xyz.tspace.hotelbolt.view.launch
 
 import android.graphics.PointF
 import android.os.CountDownTimer
+import androidx.fragment.app.viewModels
 import com.qmuiteam.qmui.util.QMUIDisplayHelper
 import kotlinx.android.synthetic.main.fragment_splash.*
 import xyz.tspace.animview.bean.CircleBean
@@ -9,18 +10,19 @@ import xyz.tspace.hotelbolt.R
 import xyz.tspace.hotelbolt.base.BaseFragment
 import xyz.tspace.hotelbolt.viewmodel.LaunchViewModel
 
-class SplashFragment :
-    BaseFragment<LaunchViewModel>(R.layout.fragment_splash, LaunchViewModel::class) {
+class SplashFragment : BaseFragment(R.layout.fragment_splash, false) {
+
+    private val launchViewModel: LaunchViewModel by viewModels()
 
     private val circleBeanList: MutableList<CircleBean> = mutableListOf()
 
     //下一页的地址
     private val nextPage by lazy {
-        if (viewModel.canPassLogin) R.id.action_splashFragment_to_navFragment else R.id.action_splashFragment_to_beginFragment
+        if (launchViewModel.canPassLogin) R.id.action_splashFragment_to_navFragment else R.id.action_splashFragment_to_beginFragment
     }
 
     //倒计时
-    private val countDown = object : CountDownTimer(3_000, 1_000) {
+    private val countDown = object : CountDownTimer(4_000, 1_000) {
         override fun onFinish() {
             bubbleView.stopAnimation()
             navigateTo(nextPage)
@@ -28,15 +30,13 @@ class SplashFragment :
 
         override fun onTick(millisUntilFinished: Long) {
             val str =
-                (kotlin.math.ceil((millisUntilFinished / 1000).toDouble()).toInt() + 1)
+                (kotlin.math.ceil((millisUntilFinished / 1000).toDouble())).toInt()
                     .toString() + " " + getString(R.string.text_enter)
             btnLogin.text = str
         }
     }
 
-    override fun setStatusDarkMode(): Boolean? = false
     override fun initView() {
-
         bubbleView.run {
             initPoint()
             circleBeen = circleBeanList
@@ -53,11 +53,9 @@ class SplashFragment :
         }
     }
 
-
     override fun initObserver() {
 
     }
-
 
     private fun initPoint() {
         val height: Int = QMUIDisplayHelper.getScreenHeight(requireContext())

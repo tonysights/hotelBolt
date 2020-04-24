@@ -1,6 +1,8 @@
 package xyz.tspace.hotelbolt.view.hotels.tab
 
 import android.widget.RatingBar
+import androidx.fragment.app.activityViewModels
+import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import kotlinx.android.synthetic.main.vp_hotel_comment.*
@@ -8,11 +10,10 @@ import xyz.tspace.hotelbolt.R
 import xyz.tspace.hotelbolt.adapter.CommentListAdapter
 import xyz.tspace.hotelbolt.base.BaseFragment
 import xyz.tspace.hotelbolt.view.hotels.HotelDetailFragmentDirections
-import xyz.tspace.hotelbolt.viewmodel.MainViewModel
+import xyz.tspace.hotelbolt.viewmodel.HotelViewModel
 
-class HotelCommentTabFragment :
-    BaseFragment<MainViewModel>(R.layout.vp_hotel_comment, MainViewModel::class) {
-    override fun setStatusDarkMode(): Boolean? = false
+class HotelCommentTabFragment : BaseFragment(R.layout.vp_hotel_comment) {
+    private val hotelViewModel by activityViewModels<HotelViewModel>()
 
     override fun initView() {
         setupCommentList()
@@ -20,24 +21,17 @@ class HotelCommentTabFragment :
 
     override fun initListener() {
         ratingBar.setOnRatingBarChangeListener { ratingBar: RatingBar, fl: Float, b: Boolean ->
-
             val action =
                 HotelDetailFragmentDirections.actionHotelDetailFragmentToAddingCommentFragment()
             action.userAppraise = fl
-            viewModel.userPraiseFlLive.value = fl
+            hotelViewModel.userPraiseFlLive.value = fl
             navigateTo(action)
         }
 
     }
 
     override fun initObserver() {
-        viewModel.roomCommentsLive.observe(this, Observer {
-            (recyclerView.adapter as CommentListAdapter).submitList(it)
-        })
-
-        ratingBar.setOnRatingBarChangeListener { _: RatingBar, fl: Float, _: Boolean ->
-            viewModel.userPraiseFlLive.value = fl
-        }
+        hotelViewModel
 
     }
 

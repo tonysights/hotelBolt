@@ -1,5 +1,6 @@
 package xyz.tspace.hotelbolt.view.launch
 
+import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import kotlinx.android.synthetic.main.fragment_login.*
 import xyz.tspace.hotelbolt.R
@@ -7,11 +8,9 @@ import xyz.tspace.hotelbolt.base.BaseFragment
 import xyz.tspace.hotelbolt.util.TipDialogUtil
 import xyz.tspace.hotelbolt.viewmodel.LaunchViewModel
 
-class LoginFragment :
-    BaseFragment<LaunchViewModel>(R.layout.fragment_login, LaunchViewModel::class) {
+class LoginFragment : BaseFragment(R.layout.fragment_login, false) {
 
-    override fun setStatusDarkMode(): Boolean? = false
-
+    private val launchViewModel: LaunchViewModel by viewModels()
 
     override fun initView() {
 
@@ -23,7 +22,7 @@ class LoginFragment :
         go_register_qmbtn.setOnClickListener { navigateTo(R.id.action_loginFragment_to_registerFragment) }
         //登陆按钮监听
         login_qmbtn.setOnClickListener {
-            viewModel.login(account_et.text.toString(), reg_pw_et.text.toString())
+            launchViewModel.login(account_et.text.toString(), reg_pw_et.text.toString())
             TipDialogUtil.show(
                 getString(R.string.text_loading),
                 TipDialogUtil.LOADING,
@@ -36,7 +35,7 @@ class LoginFragment :
     override fun initObserver() {
 
         //观察令牌的获取
-        viewModel.tokenLive.observe(this, Observer {
+        mainViewModel.tokenLive.observe(this, Observer {
             TipDialogUtil.dismiss()
             when (it?.verifyInfo) {
                 getInteger(R.integer.LOGIN_SUCCESS) -> {

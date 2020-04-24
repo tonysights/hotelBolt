@@ -12,10 +12,10 @@ import com.bumptech.glide.Glide
 import com.qmuiteam.qmui.util.QMUIDisplayHelper
 import kotlinx.android.synthetic.main.item_home_waterfall.view.*
 import xyz.tspace.hotelbolt.R
-import xyz.tspace.hotelbolt.base.WaterFallCell
+import xyz.tspace.hotelbolt.base.ViewCellBean
 import kotlin.random.Random
 
-class WaterFallAdapter() : ListAdapter<WaterFallCell, WFViewHolder>(diffCallback) {
+class WaterFallAdapter() : ListAdapter<ViewCellBean, WFViewHolder>(diffCallback) {
 
     //context
     private var _context: Context? = null
@@ -97,11 +97,11 @@ class WaterFallAdapter() : ListAdapter<WaterFallCell, WFViewHolder>(diffCallback
 
     }
 
-    object diffCallback : DiffUtil.ItemCallback<WaterFallCell>() {
-        override fun areItemsTheSame(oldItem: WaterFallCell, newItem: WaterFallCell): Boolean =
+    object diffCallback : DiffUtil.ItemCallback<ViewCellBean>() {
+        override fun areItemsTheSame(oldItem: ViewCellBean, newItem: ViewCellBean): Boolean =
             oldItem == newItem
 
-        override fun areContentsTheSame(oldItem: WaterFallCell, newItem: WaterFallCell): Boolean =
+        override fun areContentsTheSame(oldItem: ViewCellBean, newItem: ViewCellBean): Boolean =
             oldItem.title == newItem.title && oldItem.subTitle == newItem.subTitle
     }
 

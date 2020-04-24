@@ -34,7 +34,6 @@ class HotelListAdapter :
                 Glide.with(it).load(it).into(favButton)
             }
             this.onClick {
-
                 val hotelListAction =
                     HotelListFragmentDirections.actionHotelListFragmentToHotelDetailFragment()
                 val id = it.tag
