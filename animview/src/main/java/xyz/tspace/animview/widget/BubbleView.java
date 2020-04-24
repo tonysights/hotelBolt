@@ -25,8 +25,6 @@ import xyz.tspace.animview.bean.CircleBean;
 import xyz.tspace.animview.util.BezierUtil;
 
 /**
- * Created by allen on 2016/12/9.
- * <p>
  * 气泡动画
  */
 
