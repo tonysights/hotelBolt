@@ -1,5 +1,6 @@
 package xyz.tspace.hotelbolt.view.hotels
 
+import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.navArgs
 import androidx.viewpager2.widget.ViewPager2
 import com.google.android.material.tabs.TabLayoutMediator
@@ -9,11 +10,11 @@ import xyz.tspace.hotelbolt.R
 import xyz.tspace.hotelbolt.adapter.TabPageAdapter
 import xyz.tspace.hotelbolt.base.BaseFragment
 import xyz.tspace.hotelbolt.view.hotels.tab.ModifyCommentFragment
-import xyz.tspace.hotelbolt.viewmodel.MainViewModel
+import xyz.tspace.hotelbolt.viewmodel.HotelViewModel
 
-class AddingCommentFragment :
-    BaseFragment<MainViewModel>(R.layout.fragment_adding_comment, MainViewModel::class) {
-    override fun setStatusDarkMode(): Boolean? = false
+class AddingCommentFragment : BaseFragment(R.layout.fragment_adding_comment, false) {
+
+    private val hotelViewModel by activityViewModels<HotelViewModel>()
 
     private val args: AddingCommentFragmentArgs by navArgs()
     private val modifyPage = ModifyCommentFragment()
@@ -30,6 +31,7 @@ class AddingCommentFragment :
     }
 
     override fun initObserver() {
+
 
     }
 

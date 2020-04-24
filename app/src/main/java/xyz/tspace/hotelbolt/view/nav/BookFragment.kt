@@ -7,18 +7,14 @@ import xyz.tspace.hotelbolt.R
 import xyz.tspace.hotelbolt.adapter.TabPageAdapter
 import xyz.tspace.hotelbolt.base.BaseFragment
 import xyz.tspace.hotelbolt.view.nav.tab.BookSearchFragment
-import xyz.tspace.hotelbolt.viewmodel.MainViewModel
 
-class BookFragment :
-    BaseFragment<MainViewModel>(R.layout.fragment_book, MainViewModel::class) {
+class BookFragment : BaseFragment(R.layout.fragment_book) {
 
     private val searchPage = BookSearchFragment()
 
     private val historyPage = BookSearchFragment()
 
     private val favPage = BookSearchFragment()
-
-    override fun setStatusDarkMode(): Boolean? = false
 
 
     override fun initView() {

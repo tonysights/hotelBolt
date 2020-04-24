@@ -1,6 +1,7 @@
 package xyz.tspace.hotelbolt.view.hotels
 
 import android.view.View
+import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.Observer
 import androidx.navigation.fragment.navArgs
 import androidx.viewpager2.widget.ViewPager2
@@ -14,14 +15,15 @@ import xyz.tspace.hotelbolt.R
 import xyz.tspace.hotelbolt.adapter.DetailImageBannerAdapter
 import xyz.tspace.hotelbolt.adapter.TabPageAdapter
 import xyz.tspace.hotelbolt.base.BaseFragment
+import xyz.tspace.hotelbolt.model.Hotel
 import xyz.tspace.hotelbolt.view.hotels.tab.HotelCommentTabFragment
 import xyz.tspace.hotelbolt.view.hotels.tab.HotelDetailTabFragment
-import xyz.tspace.hotelbolt.viewmodel.MainViewModel
+import xyz.tspace.hotelbolt.viewmodel.HotelViewModel
 import kotlin.math.abs
 
-class HotelDetailFragment :
-    BaseFragment<MainViewModel>(R.layout.fragment_hotel_detail, MainViewModel::class) {
+class HotelDetailFragment : BaseFragment(R.layout.fragment_hotel_detail, true) {
 
+    private val hotelViewModel by activityViewModels<HotelViewModel>()
 
     //viewPager2 详情tab页
     private val detailPage = HotelDetailTabFragment()
@@ -31,19 +33,16 @@ class HotelDetailFragment :
     private val commentPage = HotelCommentTabFragment()
 
 
-    //在hotelList中点击lie'biao列表项后传递过来的参数：包含hotelId
+    //在hotelList中点击列表项后传递过来的参数：包含hotelId
     private val hotelDetailArgs: HotelDetailFragmentArgs by navArgs()
 
 
-    override fun setStatusDarkMode(): Boolean? = true
-
     override fun initView() {
+
+        updateData()
         setupToolbar()
-        viewModel.fetchRoomComment("")
-        viewModel.fetchHotelRoomInfo(hotelDetailArgs.hotelId)
         setupBanner()
         setupViewPager()
-
 
     }
 
@@ -52,34 +51,44 @@ class HotelDetailFragment :
         alpha_btn1_back.onClick { popBack() }
 
 
-
     }
 
     override fun initObserver() {
-        //观察房间信息获取，及时为图片图片提供图片源
-        viewModel.hotelRoomLive.observe(requireActivity(), Observer {
-            val picList = it[0].urlList
-            if (picList != null) (bannerTop.adapter as DetailImageBannerAdapter).setDatas(picList)
-            bannerTop.run {
-                indicator = CircleIndicator(requireContext())
-                start()
-            }
+        hotelViewModel.hotelListLive.observe(this, Observer {
+            setupData(it)
         })
-        //观察酒店信息获取
-        viewModel.hotelListLive.observe(this, Observer {
-            val iterator = it.listIterator()
-            while (iterator.hasNext()) {
-                val item = iterator.next()
-                if (item.id == hotelDetailArgs.hotelId) {
-                    hotelName_tv.text = item.hotelName
-                    hotelRank_tv.text = item.hotelRank
-                    ratingBar.rating = item.hotelSource
-                    commentsNum_tv.text = item.hotelComment.toString()
-                    location_tv.text = item.hotelLocation
+        hotelViewModel.roomListLive.observe(this, Observer {
+            bannerTop.run {
+                val urlList = it[0].urlList
+                if (urlList != null) {
+                    adapter = DetailImageBannerAdapter(urlList)
+                    indicator = CircleIndicator(requireContext())
                 }
             }
         })
     }
+
+    //获取酒店房间信息和相关评论
+    private fun updateData() {
+        hotelViewModel.fetchRoomListByHotelId(hotelDetailArgs.hotelId)
+        hotelViewModel.fetchRoomCommentByRoomTypeId("1")
+    }
+
+    //将数据提供给组件
+    private fun setupData(list: List<Hotel>) {
+        val iterator = list.listIterator()
+        while (iterator.hasNext()) {
+            val item = iterator.next()
+            if (item.id == hotelDetailArgs.hotelId) {
+                hotelName_tv.text = item.hotelName
+                hotelRank_tv.text = item.hotelRank
+                ratingBar.rating = item.hotelSource
+                commentsNum_tv.text = item.hotelComment.toString()
+                location_tv.text = item.hotelLocation
+            }
+        }
+    }
+
 
     private fun setupViewPager() {
         val arrStr = getStringArray(R.array.tabTitle_hotelDetail)
@@ -107,6 +116,7 @@ class HotelDetailFragment :
             setDelayTime(2700)
         }
     }
+
 
     private fun setupToolbar() {
         hotelDesContainer.radius = 11

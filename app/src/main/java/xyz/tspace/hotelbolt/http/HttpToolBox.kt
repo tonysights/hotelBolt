@@ -5,11 +5,10 @@ import retrofit2.converter.gson.GsonConverterFactory
 
 class HttpToolBox {
     companion object {
-
-
+        //服务器基地址
         private const val baseUrl = "http://120.26.235.201:8799/"
 
-        //图片资源API
+        //pixabay图片资源API
         private const val pixabayUrl = "https://pixabay.com/"
 
         val client: Retrofit by lazy {
@@ -18,6 +17,7 @@ class HttpToolBox {
                 .addConverterFactory(GsonConverterFactory.create())
                 .build()
         }
+
         val imageClient: Retrofit by lazy {
             Retrofit.Builder()
                 .baseUrl(pixabayUrl)

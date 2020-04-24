@@ -17,15 +17,12 @@ import xyz.tspace.hotelbolt.adapter.ImageBannerAdapter
 import xyz.tspace.hotelbolt.adapter.TabPageAdapter
 import xyz.tspace.hotelbolt.adapter.WaterFallAdapter
 import xyz.tspace.hotelbolt.base.BaseFragment
-import xyz.tspace.hotelbolt.view.nav.tab.HomeTab_1_Fragment
-import xyz.tspace.hotelbolt.viewmodel.MainViewModel
+import xyz.tspace.hotelbolt.view.nav.tab.HomeFirstTabFragment
 
-class HomeFragment :
-    BaseFragment<MainViewModel>(R.layout.fragment_home, MainViewModel::class) {
+class HomeFragment : BaseFragment(R.layout.fragment_home, false) {
 
     private val mPopupLocationMenu by lazy { makeLocationMenu() }
 
-    override fun setStatusDarkMode(): Boolean? = false
 
     override fun initView() {
         //抓取网络图片
@@ -53,7 +50,7 @@ class HomeFragment :
 
     override fun initObserver() {
         //新图片获取后，重新加载广告轮播
-        viewModel.homeBannerLiveData.observe(this, Observer {
+        mainViewModel.homeBannerLiveData.observe(this, Observer {
             banner.adapter.setDatas(it)
         })
 
@@ -62,8 +59,8 @@ class HomeFragment :
     //初始化广告轮播
     private fun setupBanner() {
         banner.run {
-            viewModel.fetchBannerData()
-            this.adapter = ImageBannerAdapter(viewModel.homeBannerLiveData.value)
+            mainViewModel.fetchBannerData()
+            this.adapter = ImageBannerAdapter(mainViewModel.homeBannerLiveData.value)
             indicator = CircleIndicator(requireContext())
         }
     }
@@ -71,7 +68,7 @@ class HomeFragment :
     //初始化广告下方TabPager
     private fun setupTabUnderBanner() {
         homeTabPager.let {
-            it.adapter = TabPageAdapter(this, HomeTab_1_Fragment(), HomeTab_1_Fragment())
+            it.adapter = TabPageAdapter(this, HomeFirstTabFragment(), HomeFirstTabFragment())
             it.orientation = ViewPager2.ORIENTATION_HORIZONTAL
             TabLayoutMediator(
                 homeTab,

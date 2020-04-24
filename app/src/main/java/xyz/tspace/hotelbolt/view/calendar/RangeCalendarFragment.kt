@@ -7,12 +7,11 @@ import com.qmuiteam.qmui.kotlin.onClick
 import kotlinx.android.synthetic.main.fragment_range_calendar.*
 import xyz.tspace.hotelbolt.R
 import xyz.tspace.hotelbolt.base.BaseFragment
-import xyz.tspace.hotelbolt.viewmodel.MainViewModel
 
 class RangeCalendarFragment :
-    BaseFragment<MainViewModel>(R.layout.fragment_range_calendar, MainViewModel::class) {
+    BaseFragment(R.layout.fragment_range_calendar, false) {
     private val weekArray by lazy { getStringArray(R.array.week_array) }
-    override fun setStatusDarkMode(): Boolean? = false
+
     private val calendarSaves: Array<Calendar> = arrayOf(Calendar(), Calendar())
 
     override fun initView() {
@@ -33,7 +32,7 @@ class RangeCalendarFragment :
                 override fun onCalendarSelectOutOfRange(calendar: Calendar?) {}
 
                 override fun onCalendarRangeSelect(calendar: Calendar?, isEnd: Boolean) {
-                    viewModel.rangeCalendarSaves.value ?: arrayOf(Calendar(), Calendar())
+                    mainViewModel.rangeCalendarSaves.value ?: arrayOf(Calendar(), Calendar())
                     if (!isEnd) {
                         calendar?.run {
                             tv_left_date.text = strMonthWithDay(month, day)
@@ -73,7 +72,7 @@ class RangeCalendarFragment :
             })
         }
         tv_commit.onClick {
-            viewModel.rangeCalendarSaves.value = calendarSaves
+            mainViewModel.rangeCalendarSaves.value = calendarSaves
             popBack()
         }
         iv_clear.onClick { popBack() }

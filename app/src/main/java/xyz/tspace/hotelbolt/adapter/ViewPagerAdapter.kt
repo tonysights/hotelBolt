@@ -8,9 +8,9 @@ import xyz.tspace.hotelbolt.viewmodel.MainViewModel
 
 class ViewPagerAdapter(fm: FragmentManager, behavior: Int) : FragmentPagerAdapter(fm, behavior) {
 
-    private var fragments = emptyArray<BaseFragment<MainViewModel>>()
+    private var fragments = emptyArray<BaseFragment>()
 
-    constructor(fm: FragmentManager, fragmentList: Array<BaseFragment<MainViewModel>>)
+    constructor(fm: FragmentManager, fragmentList: Array<BaseFragment>)
             : this(fm, behavior = BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT) {
         this.fragments = fragmentList
     }

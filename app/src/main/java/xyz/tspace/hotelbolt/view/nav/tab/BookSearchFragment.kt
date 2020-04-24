@@ -6,11 +6,9 @@ import kotlinx.android.synthetic.main.fragment_book_search.*
 import xyz.tspace.hotelbolt.R
 import xyz.tspace.hotelbolt.base.BaseFragment
 import xyz.tspace.hotelbolt.view.calendar.strMonthWithDay
-import xyz.tspace.hotelbolt.viewmodel.MainViewModel
 
 class BookSearchFragment :
-    BaseFragment<MainViewModel>(R.layout.fragment_book_search, MainViewModel::class) {
-    override fun setStatusDarkMode(): Boolean? = false
+    BaseFragment(R.layout.fragment_book_search) {
 
     override fun initView() {
 
@@ -28,7 +26,7 @@ class BookSearchFragment :
     }
 
     override fun initObserver() {
-        viewModel.rangeCalendarSaves.observe(this, Observer {
+        mainViewModel.rangeCalendarSaves.observe(this, Observer {
             in_date_tv.text = strMonthWithDay(it[0].month, it[0].day)
             out_date_tv.text = strMonthWithDay(it[1].month, it[1].day)
         })

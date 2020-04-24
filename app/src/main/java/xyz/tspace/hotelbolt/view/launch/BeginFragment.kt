@@ -3,12 +3,8 @@ package xyz.tspace.hotelbolt.view.launch
 import kotlinx.android.synthetic.main.fragment_begin.*
 import xyz.tspace.hotelbolt.R
 import xyz.tspace.hotelbolt.base.BaseFragment
-import xyz.tspace.hotelbolt.viewmodel.LaunchViewModel
 
-class BeginFragment :
-    BaseFragment<LaunchViewModel>(R.layout.fragment_begin, LaunchViewModel::class) {
-
-    override fun setStatusDarkMode(): Boolean? = false
+class BeginFragment : BaseFragment(R.layout.fragment_begin, false) {
 
 
     override fun initView() {

@@ -25,12 +25,14 @@ class LaunchViewModel(application: Application) :
         get() {
             val token = _tokenLive.value
             if (token != null && token.isValid) {
+                getApplication<MyApp>().currentToken = token
                 return true
             }
+
             return false
         }
 
-    val shp: SharedPreferences = getApplication<MyApp>().getSharedPreferences(
+    private val shp: SharedPreferences = getApplication<MyApp>().getSharedPreferences(
         getString(R.string.key_userShp),
         Context.MODE_PRIVATE
     )
@@ -38,10 +40,7 @@ class LaunchViewModel(application: Application) :
 
     //Token
     private val _tokenLive = MutableLiveData<Token?>(loadToken())
-    val tokenLive: LiveData<Token?>
-        get() = _tokenLive.also {
-            getApplication<MyApp>().currentToken = it.value
-        }
+    val tokenLive: LiveData<Token?> get() = _tokenLive
 
 
     //登陆
@@ -68,10 +67,9 @@ class LaunchViewModel(application: Application) :
 
 
                     temp.isValid -> {
-                        _tokenLive.postValue(temp.apply {
-                            verifyInfo = getInteger(R.integer.LOGIN_SUCCESS)
-                        })
-                        saveToken(mtoken = temp, loginUser = loginUser)
+                        _tokenLive.value =
+                            temp.apply { verifyInfo = getInteger(R.integer.LOGIN_SUCCESS) }
+                        saveToken(mToken = temp, loginUser = loginUser)
                     }
                 }
 
@@ -82,13 +80,15 @@ class LaunchViewModel(application: Application) :
 
 
     //sharedPreference保存信息
-    private fun saveToken(mtoken: Token, loginUser: User) {
+    private fun saveToken(mToken: Token, loginUser: User) {
         shp.edit {
             putString(getString(R.string.key_loginCode), loginUser.logincode)
-            putString(getString(R.string.key_token), mtoken.token)
-            putLong(getString(R.string.key_token_createdTime), mtoken.createdDate.time)
+            putString(getString(R.string.key_token), mToken.token)
+            putLong(getString(R.string.key_token_createdTime), mToken.createdDate.time)
         }
+        getApplication<MyApp>().currentToken = mToken
     }
+
 
     //加载sharedPreference
     private fun loadToken(): Token? {
