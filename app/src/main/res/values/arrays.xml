@@ -48,7 +48,7 @@
 
     <string-array name="tabTitle_hotelDetail">
         <item>@string/text_introduce</item>
-        <item>@string/text_comment</item>
+        <item>@string/text_roomType</item>
     </string-array>
 
     <string-array name="tabTitle_modifyComment">

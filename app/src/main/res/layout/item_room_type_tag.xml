@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.qmuiteam.qmui.layout.QMUIFrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+    <com.qmuiteam.qmui.widget.roundwidget.QMUIRoundButton
+        android:id="@+id/roomtypeTag"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginHorizontal="5dp"
+        android:fontFamily="@font/yashihei"
+        android:gravity="center"
+        android:paddingHorizontal="10dp"
+        android:paddingVertical="2dp"
+        android:textColor="@color/qmui_config_color_gray_1"
+        app:qmui_backgroundColor="@color/qmui_config_color_gray_9"
+        app:qmui_borderColor="@color/entire_transparent"
+        tools:text="大床房" />
+</com.qmuiteam.qmui.layout.QMUIFrameLayout>

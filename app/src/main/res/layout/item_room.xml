@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="120dp"
+    android:background="@color/default_BookPage_backgroundColor">
+
+    <com.qmuiteam.qmui.widget.QMUIRadiusImageView
+        android:id="@+id/roomTypeImg"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.073"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.45"
+        tools:src="@drawable/city_eve" />
+
+    <TextView
+        android:id="@+id/roomTypeName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:drawableEnd="@drawable/ic_chevron_right_black_24dp"
+        android:fontFamily="sans-serif"
+        android:gravity="center"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.04"
+        app:layout_constraintStart_toEndOf="@+id/roomTypeImg"
+        app:layout_constraintTop_toTopOf="@+id/roomTypeImg"
+        tools:text="单人房" />
+
+    <TextView
+        android:id="@+id/roomSquare"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/thinkb"
+        android:textColor="@color/qmui_config_color_gray_3"
+        app:layout_constraintBottom_toBottomOf="@+id/roomTypeImg"
+        app:layout_constraintStart_toStartOf="@+id/roomTypeName"
+        app:layout_constraintTop_toBottomOf="@+id/roomTypeName"
+        app:layout_constraintVertical_bias="0.26999998"
+        tools:text="22~25m^2" />
+
+    <TextView
+        android:id="@+id/roomBedType"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/yashihei"
+        app:layout_constraintBottom_toBottomOf="@+id/roomBedFloor"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.05"
+        app:layout_constraintStart_toEndOf="@+id/roomBedFloor"
+        app:layout_constraintTop_toTopOf="@+id/roomBedFloor"
+        tools:text="3~5层" />
+
+    <TextView
+        android:id="@+id/roomBedFloor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:fontFamily="@font/yashihei"
+        app:layout_constraintBottom_toBottomOf="@+id/roomSquare"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.05"
+        app:layout_constraintStart_toEndOf="@+id/roomSquare"
+        app:layout_constraintTop_toTopOf="@+id/roomSquare"
+        tools:text="单人床" />
+
+    <TextView
+        android:id="@+id/price"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.757"
+        app:layout_constraintStart_toEndOf="@+id/roomTypeImg"
+        app:layout_constraintTop_toBottomOf="@+id/roomBedType"
+        app:layout_constraintVertical_bias="0.45"
+        tools:text="￥239起" />
+
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/text_pics"
+        android:scaleType="centerCrop"
+        android:src="@drawable/ic_info_outline_blue_24dp"
+        app:layout_constraintBottom_toBottomOf="@+id/price"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.25"
+        app:layout_constraintStart_toEndOf="@+id/price"
+        app:layout_constraintTop_toTopOf="@+id/price" />
+
+    <View
+        android:id="@+id/divider25"
+        android:layout_width="0dp"
+        android:layout_height="0.7dp"
+        android:layout_marginHorizontal="15dp"
+        android:background="?android:attr/listDivider"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

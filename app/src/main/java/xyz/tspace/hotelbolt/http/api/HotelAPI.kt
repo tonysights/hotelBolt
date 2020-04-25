@@ -13,7 +13,7 @@ interface HotelAPI {
         @Header("akt") token: String,
         @Path("hotelId") hotelId: String
 
-    ): RequestList<HotelRoom>
+    ): RequestList<RoomType>
 
     @POST("api/hotel/findhotel")
     fun searchHotel(
@@ -27,21 +27,23 @@ interface HotelAPI {
         @Path("hotelId") roomTypeId: String?
     ): RequestList<Appraise>
 
+//    @GET("api/hotel/findallroom/{hotelId}")
+//    fun findAllRoom(@Header("akt") tokenStr: String, @Path("hotelId") roomTypeId: String?)
+//    :RequestList<SearchRoom>
+
 }
 
 class HotelService {
     companion object {
         private val service: HotelAPI by lazy { HttpToolBox.client.create(HotelAPI::class.java) }
 
-        fun searchRoomByHotelId(token: Token, hotelId: String, callback: ResponseList<HotelRoom>) {
+        fun searchRoomByHotelId(token: Token, hotelId: String, callback: ResponseList<RoomType>) {
             service.searchRoomByHotelId(token.akt, hotelId).run { enqueue(callback) }
         }
-
 
         fun searchHotel(token: Token, searchRoom: SearchRoom, callback: ResponseList<Hotel>) {
             service.searchHotel(token.akt, searchRoom).run { enqueue(callback) }
         }
-
 
         fun findAllComments(token: Token, hotelId: String?, callback: ResponseList<Appraise>) {
             service.findAllComments(token.akt, hotelId).run { enqueue(callback) }

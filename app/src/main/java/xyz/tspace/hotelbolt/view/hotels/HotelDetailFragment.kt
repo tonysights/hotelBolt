@@ -16,8 +16,8 @@ import xyz.tspace.hotelbolt.adapter.DetailImageBannerAdapter
 import xyz.tspace.hotelbolt.adapter.TabPageAdapter
 import xyz.tspace.hotelbolt.base.BaseFragment
 import xyz.tspace.hotelbolt.model.Hotel
-import xyz.tspace.hotelbolt.view.hotels.tab.HotelCommentTabFragment
 import xyz.tspace.hotelbolt.view.hotels.tab.HotelDetailTabFragment
+import xyz.tspace.hotelbolt.view.hotels.tab.RoomTypeTabFragment
 import xyz.tspace.hotelbolt.viewmodel.HotelViewModel
 import kotlin.math.abs
 
@@ -30,7 +30,7 @@ class HotelDetailFragment : BaseFragment(R.layout.fragment_hotel_detail, true) {
 
 
     //viewPager2 评论tab页
-    private val commentPage = HotelCommentTabFragment()
+    private val roomTypePage = RoomTypeTabFragment()
 
 
     //在hotelList中点击列表项后传递过来的参数：包含hotelId
@@ -57,12 +57,15 @@ class HotelDetailFragment : BaseFragment(R.layout.fragment_hotel_detail, true) {
         hotelViewModel.hotelListLive.observe(this, Observer {
             setupData(it)
         })
-        hotelViewModel.roomListLive.observe(this, Observer {
-            bannerTop.run {
+        hotelViewModel.roomTypeListLive.observe(this, Observer {
+            if (it.isNotEmpty()) {
                 val urlList = it[0].urlList
-                if (urlList != null) {
-                    adapter = DetailImageBannerAdapter(urlList)
-                    indicator = CircleIndicator(requireContext())
+                bannerTop.run {
+
+                    if (urlList != null) {
+                        adapter = DetailImageBannerAdapter(urlList)
+                        indicator = CircleIndicator(requireContext())
+                    }
                 }
             }
         })
@@ -93,7 +96,7 @@ class HotelDetailFragment : BaseFragment(R.layout.fragment_hotel_detail, true) {
     private fun setupViewPager() {
         val arrStr = getStringArray(R.array.tabTitle_hotelDetail)
         viewPager2.let {
-            it.adapter = TabPageAdapter(this, detailPage, commentPage)
+            it.adapter = TabPageAdapter(this, detailPage, roomTypePage)
             it.orientation = ViewPager2.ORIENTATION_HORIZONTAL
             TabLayoutMediator(
                 tabLayout,
@@ -123,8 +126,8 @@ class HotelDetailFragment : BaseFragment(R.layout.fragment_hotel_detail, true) {
         appBar.addOnOffsetChangedListener(AppBarLayout.OnOffsetChangedListener { appBarLayout, verticalOffset ->
             val offset = abs(verticalOffset)
             if (offset < appBarLayout.totalScrollRange / 2) {
-                toolbarDetail.visibility = View.INVISIBLE
-            } else toolbarDetail.visibility = View.VISIBLE
+                toolbarDetail?.visibility = View.INVISIBLE
+            } else toolbarDetail?.visibility = View.VISIBLE
         })
     }
 }

@@ -22,14 +22,13 @@ class HotelDetailTabFragment : BaseFragment(R.layout.vp_hotel_detail) {
 
     override fun initObserver() {
 
-        hotelViewModel.roomListLive.observe(this, Observer {
-            val introText = it[0].roomDetails
-            if (introText != null) {
-                intro.hotelIntro_tv.text = introText
+        hotelViewModel.roomTypeListLive.observe(this, Observer {
+            if (it.isNotEmpty()) {
+                val introText = it[0].roomDetails
+                if (introText != null) {
+                    intro.hotelIntro_tv.text = introText
+                }
             }
         })
     }
-
-
-
 }
