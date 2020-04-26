@@ -21,6 +21,8 @@ import java.util.*
 
 class LaunchViewModel(application: Application) :
     BaseViewModel(application) {
+
+    //标记：根据token是否有效决定能不能跳过登陆流程
     val canPassLogin: Boolean
         get() {
             val token = _tokenLive.value
@@ -28,7 +30,6 @@ class LaunchViewModel(application: Application) :
                 getApplication<MyApp>().currentToken = token
                 return true
             }
-
             return false
         }
 
@@ -61,10 +62,9 @@ class LaunchViewModel(application: Application) :
                 val temp = response.body()?.data.also { it?.verify() }
 
                 when {
-                    temp == null -> _tokenLive.postValue(Token(null).also {
+                    temp == null -> _tokenLive.value = Token(null).also {
                         it.verifyInfo = getInteger(R.integer.LOGIN_FAIL)
-                    })
-
+                    }
 
                     temp.isValid -> {
                         _tokenLive.value =
@@ -72,9 +72,7 @@ class LaunchViewModel(application: Application) :
                         saveToken(mToken = temp, loginUser = loginUser)
                     }
                 }
-
             }
-
         })
     }
 

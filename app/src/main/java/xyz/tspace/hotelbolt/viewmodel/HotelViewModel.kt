@@ -7,6 +7,7 @@ import androidx.lifecycle.MutableLiveData
 import retrofit2.Call
 import retrofit2.Response
 import xyz.tspace.hotelbolt.MyApp
+import xyz.tspace.hotelbolt.R
 import xyz.tspace.hotelbolt.base.BaseBean
 import xyz.tspace.hotelbolt.base.BaseViewModel
 import xyz.tspace.hotelbolt.base.ResponseList
@@ -26,14 +27,15 @@ class HotelViewModel(application: Application) : BaseViewModel(application) {
 
     //所选酒店各房间信息
     private val _hotelRoomLive =
-        MutableLiveData<List<HotelRoom>>(DataProvider.getInitHotelRoomList())
-    val roomListLive: LiveData<List<HotelRoom>> get() = _hotelRoomLive
+        MutableLiveData<List<RoomType>>(DataProvider.getInitHotelRoomList())
+    val roomTypeListLive: LiveData<List<RoomType>> get() = _hotelRoomLive
 
 
     //房间评论信息
     private val _roomCommentsLive = MutableLiveData<List<Appraise>>(listOf<Appraise>())
     val roomCommentsLive: LiveData<List<Appraise>> get() = _roomCommentsLive
 
+    val currentActiveTag = MutableLiveData<String>(getString(R.string.status_not_activated))
 
     //获取酒店信息列表
     fun fetchHotelList() {
@@ -62,14 +64,14 @@ class HotelViewModel(application: Application) : BaseViewModel(application) {
         if (token != null && token.isValid)
         //TODO: 将hotelId参数修改为页面实际选择的酒店的hotelId
             HotelService.searchRoomByHotelId(
-                token, hotelId, object : ResponseList<HotelRoom> {
-                    override fun onFailure(call: Call<BaseBean<List<HotelRoom>>>, t: Throwable) {
+                token, hotelId, object : ResponseList<RoomType> {
+                    override fun onFailure(call: Call<BaseBean<List<RoomType>>>, t: Throwable) {
                         println(t.cause)
                     }
 
                     override fun onResponse(
-                        call: Call<BaseBean<List<HotelRoom>>>,
-                        response: Response<BaseBean<List<HotelRoom>>>
+                        call: Call<BaseBean<List<RoomType>>>,
+                        response: Response<BaseBean<List<RoomType>>>
                     ) {
                         response.body()?.data?.let { _hotelRoomLive.postValue(it) }
                     }

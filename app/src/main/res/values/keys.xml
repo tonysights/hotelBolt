@@ -33,6 +33,7 @@
     <string name="key_room_num" translatable="false">roomNum</string>
     <string name="key_adult_num" translatable="false">adultNum</string>
     <string name="key_kid_num" translatable="false">kidNum</string>
+    <string name="status_not_activated" translatable="false">not_activated</string>
 
 
     <integer name="ACTION_REQUEST_PERMISSIONS">0x001</integer>

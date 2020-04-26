@@ -13,8 +13,7 @@ data class SearchRoom(val lowPrice: Int) {
 
 }
 
-data class HotelRoom(val hotelId: String) {
-
+data class RoomType(val hotelId: String) {
     val avgGrade: Float? = null
     val bedInfo: String? = null
     val breakfast: String? = null
@@ -59,4 +58,16 @@ data class Hotel(
     val lowPrice: Int,
     val orgPrice: Int,
     val hotelLevel: Int
+)
+
+data class HotelRoom(
+    val id: Int,
+    val roomNumber: Int,
+    val roomStatus: Int,
+    val roomtypeId: Int,
+    val fixed: Int,
+    val needClean: Int,
+    val floor: Int,
+    val hotelid: Int,
+    val status: Int
 )

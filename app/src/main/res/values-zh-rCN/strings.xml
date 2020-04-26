@@ -277,4 +277,5 @@
     <string name="hint_clickToAppraise">点击添加您的评论</string>
     <string name="text_soso">一般</string>
     <string name="hint_addComments">添加评论</string>
+    <string name="text_roomType">选择房间</string>
 </resources>

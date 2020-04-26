@@ -61,14 +61,14 @@ fun testImage() {
 fun testFindHotelByHotelId() {
 
 
-    HotelService.searchRoomByHotelId(token, "1", object : ResponseList<HotelRoom> {
-        override fun onFailure(call: Call<BaseBean<List<HotelRoom>>>, t: Throwable) {
+    HotelService.searchRoomByHotelId(token, "1", object : ResponseList<RoomType> {
+        override fun onFailure(call: Call<BaseBean<List<RoomType>>>, t: Throwable) {
             println()
         }
 
         override fun onResponse(
-            call: Call<BaseBean<List<HotelRoom>>>,
-            response: Response<BaseBean<List<HotelRoom>>>
+            call: Call<BaseBean<List<RoomType>>>,
+            response: Response<BaseBean<List<RoomType>>>
         ) {
             println(response.body()?.data.toString())
         }

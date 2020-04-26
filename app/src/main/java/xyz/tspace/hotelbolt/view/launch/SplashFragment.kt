@@ -2,7 +2,7 @@ package xyz.tspace.hotelbolt.view.launch
 
 import android.graphics.PointF
 import android.os.CountDownTimer
-import androidx.fragment.app.viewModels
+import androidx.fragment.app.activityViewModels
 import com.qmuiteam.qmui.util.QMUIDisplayHelper
 import kotlinx.android.synthetic.main.fragment_splash.*
 import xyz.tspace.animview.bean.CircleBean
@@ -12,7 +12,7 @@ import xyz.tspace.hotelbolt.viewmodel.LaunchViewModel
 
 class SplashFragment : BaseFragment(R.layout.fragment_splash, false) {
 
-    private val launchViewModel: LaunchViewModel by viewModels()
+    private val launchViewModel: LaunchViewModel by activityViewModels()
 
     private val circleBeanList: MutableList<CircleBean> = mutableListOf()
 

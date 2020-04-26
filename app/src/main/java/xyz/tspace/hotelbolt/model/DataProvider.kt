@@ -31,10 +31,10 @@ class DataProvider {
             }
         }
 
-        fun getInitHotelRoomList(): List<HotelRoom> {
+        fun getInitHotelRoomList(): List<RoomType> {
 
-            return ArrayList<HotelRoom>().apply {
-                add(HotelRoom("0"))
+            return ArrayList<RoomType>().apply {
+                add(RoomType("0"))
             }
         }
     }

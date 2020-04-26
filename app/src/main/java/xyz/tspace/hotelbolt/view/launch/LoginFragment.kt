@@ -1,6 +1,6 @@
 package xyz.tspace.hotelbolt.view.launch
 
-import androidx.fragment.app.viewModels
+import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.Observer
 import kotlinx.android.synthetic.main.fragment_login.*
 import xyz.tspace.hotelbolt.R
@@ -10,7 +10,7 @@ import xyz.tspace.hotelbolt.viewmodel.LaunchViewModel
 
 class LoginFragment : BaseFragment(R.layout.fragment_login, false) {
 
-    private val launchViewModel: LaunchViewModel by viewModels()
+    private val launchViewModel: LaunchViewModel by activityViewModels()
 
     override fun initView() {
 
@@ -35,7 +35,7 @@ class LoginFragment : BaseFragment(R.layout.fragment_login, false) {
     override fun initObserver() {
 
         //观察令牌的获取
-        mainViewModel.tokenLive.observe(this, Observer {
+        launchViewModel.tokenLive.observe(this, Observer {
             TipDialogUtil.dismiss()
             when (it?.verifyInfo) {
                 getInteger(R.integer.LOGIN_SUCCESS) -> {
